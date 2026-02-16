@@ -1,47 +1,57 @@
 # Wedding Evee
 
-`wedding.md` 요구사항 기반 웨딩박람회 디렉터리 프로젝트입니다.
+Wedding fair directory app based on `sample/wedding.md`.
 
-## Stack
+## Tech stack
 
 - Next.js 16 (App Router)
 - React 19
 - TypeScript
 - Tailwind CSS 4
-- Cheerio (수집 파서)
+- Cheerio (source parsing)
+- OpenNext for Cloudflare Workers
+- Wrangler
 
-## 주요 경로
+## App routes
 
-- `/`, `/wedding`: 전국 리스트
-- `/wedding/[region]`: 지역 상세
-- `/tarot`, `/match`: Coming Soon
-- `/go/[eventId]`: CPA 중간 리다이렉트
-- `/go/unavailable`: 미등록 CPA 안내
-- `/api/cron/sync-wedding`: 소스 수집/동기화
-- `/api/track`: 트래킹 수집
+- `/`, `/wedding`: all regions list
+- `/wedding/[region]`: region detail
+- `/tarot`, `/match`: coming soon
+- `/go/[eventId]`: CPA redirect bridge
+- `/go/unavailable`: fallback page when CPA URL is missing
+- `/api/cron/sync-wedding`: crawl and sync endpoint
+- `/api/track`: tracking ingest endpoint
 
-## 로컬 실행
+## Local development
 
 ```bash
 npm run dev
 ```
 
-## 수집 수동 실행
+## Cloudflare Workers deployment (OpenNext)
+
+This repository is configured for Workers builds.
+
+- Root directory: `web`
+- Deploy command: `npm run deploy`
+- Config file: `wrangler.jsonc`
+
+Worker build scripts:
 
 ```bash
-curl "http://localhost:3000/api/cron/sync-wedding?secret=YOUR_CRON_SECRET"
+npm run preview
+npm run deploy
 ```
 
-## 환경 변수
+## Required environment variables
 
-- `CRON_SECRET`: cron 동기화 보호용 시크릿
-- `WEDDING_SOURCE_URL`: 소스 URL (기본: replyalba weddingA)
-- `NEXT_PUBLIC_GA_MEASUREMENT_ID` 또는 `GA_MEASUREMENT_ID`
-- `NEXT_PUBLIC_META_PIXEL_ID` 또는 `META_PIXEL_ID`
-- `NEXT_PUBLIC_CARD_WHOLE_CLICK_CPA`: `true`일 때 카드 전체 클릭 CPA 활성화
+- `CRON_SECRET`
+- `WEDDING_SOURCE_URL` (default source: replyalba weddingA)
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` or `GA_MEASUREMENT_ID`
+- `NEXT_PUBLIC_META_PIXEL_ID` or `META_PIXEL_ID`
+- `NEXT_PUBLIC_CARD_WHOLE_CLICK_CPA` (`true` to enable full-card click to CPA)
 
-## 데이터 파일
+## Data file
 
 - `public/data/wedding.json`
-  초기 데이터 저장 및 빌드 시 정적 로딩에 사용됩니다.
 
