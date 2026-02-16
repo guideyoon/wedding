@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f4f0f8;
+  --paper: #fffdfd;
+  --ink: #1f1a26;
+  --ink-strong: #21152e;
+  --ink-dim: #5e4f74;
+  --ink-faint: #84719f;
+  --accent: #b88dd8;
+  --soft-accent: #efe4f8;
+  --line: #e5d8f2;
+  --shadow-soft: 0 10px 25px rgba(130, 96, 165, 0.08);
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-title);
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+}
+
+body {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(219, 187, 244, 0.28), transparent 34%),
+    radial-gradient(circle at 85% 0%, rgba(244, 198, 224, 0.25), transparent 40%),
+    var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title), Georgia, serif;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 768px) {
+  body {
+    background:
+      radial-gradient(circle at 50% -10%, rgba(226, 198, 246, 0.35), transparent 45%),
+      var(--bg);
+  }
+}

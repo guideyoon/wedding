@@ -1,0 +1,139 @@
+{
+  "generatedAt": "2026-02-16T00:30:00+09:00",
+  "regions": [
+    {
+      "key": "seoul",
+      "name": "서울",
+      "heroImageUrl": "/images/region-fallback/seoul.svg",
+      "events": [
+        {
+          "id": "seoul-20260221-coex-wedex",
+          "region": "seoul",
+          "title": "서울 강남 COEX 웨딩박람회",
+          "dateRangeText": "2026.02.21(토) - 2026.02.22(일)",
+          "startDate": "2026-02-21",
+          "endDate": "2026-02-22",
+          "venueText": "서울 강남구 영동대로 513, 코엑스",
+          "detailUrl": "https://replyalba.com/intros/weddingA/",
+          "cpaUrl": "https://cpa-network.example/track?offer=123",
+          "heroImageUrl": "/images/region-fallback/seoul.svg",
+          "badges": ["무료초대권", "사전예약"],
+          "updatedAt": "2026-02-16T00:30:00+09:00"
+        },
+        {
+          "id": "seoul-20260307-jamsil-weddingfair",
+          "region": "seoul",
+          "title": "잠실 초대형 웨딩페어",
+          "dateRangeText": "2026.03.07(토) - 2026.03.08(일)",
+          "startDate": "2026-03-07",
+          "endDate": "2026-03-08",
+          "venueText": "서울 송파구 올림픽로 240",
+          "detailUrl": "https://replyalba.com/intros/weddingA/",
+          "cpaUrl": "",
+          "heroImageUrl": "/images/region-fallback/seoul.svg",
+          "badges": ["현장혜택"],
+          "updatedAt": "2026-02-16T00:30:00+09:00"
+        }
+      ]
+    },
+    {
+      "key": "gyeonggi",
+      "name": "경기",
+      "heroImageUrl": "/images/region-fallback/gyeonggi.svg",
+      "events": [
+        {
+          "id": "gyeonggi-20260228-ilsan-kintex-fair",
+          "region": "gyeonggi",
+          "title": "일산 킨텍스 웨딩박람회",
+          "dateRangeText": "2026.02.28(토) - 2026.03.01(일)",
+          "startDate": "2026-02-28",
+          "endDate": "2026-03-01",
+          "venueText": "경기 고양시 일산서구 킨텍스로 217-60",
+          "detailUrl": "https://replyalba.com/intros/weddingA/",
+          "cpaUrl": "https://cpa-network.example/track?offer=456",
+          "heroImageUrl": "/images/region-fallback/gyeonggi.svg",
+          "badges": ["무료초대", "사전예약"],
+          "updatedAt": "2026-02-16T00:30:00+09:00"
+        }
+      ]
+    },
+    {
+      "key": "incheon",
+      "name": "인천",
+      "heroImageUrl": "/images/region-fallback/incheon.svg",
+      "events": [
+        {
+          "id": "incheon-20260314-songdo-wedding-festa",
+          "region": "incheon",
+          "title": "송도 웨딩페스타",
+          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
+          "startDate": "2026-03-14",
+          "endDate": "2026-03-15",
+          "venueText": "인천 연수구 센트럴로 123",
+          "detailUrl": "https://replyalba.com/intros/weddingA/",
+          "cpaUrl": "https://cpa-network.example/track?offer=789",
+          "heroImageUrl": "/images/region-fallback/incheon.svg",
+          "badges": ["무료초대권"],
+          "updatedAt": "2026-02-16T00:30:00+09:00"
+        }
+      ]
+    },
+    {
+      "key": "busan",
+      "name": "부산",
+      "heroImageUrl": "/images/region-fallback/busan.svg",
+      "events": [
+        {
+          "id": "busan-20260222-bexco-weddingfair",
+          "region": "busan",
+          "title": "부산 벡스코 웨딩박람회",
+          "dateRangeText": "2026.02.22(일)",
+          "startDate": "2026-02-22",
+          "endDate": "2026-02-22",
+          "venueText": "부산 해운대구 APEC로 55",
+          "detailUrl": "https://replyalba.com/intros/weddingA/",
+          "cpaUrl": "",
+          "heroImageUrl": "/images/region-fallback/busan.svg",
+          "badges": ["현장혜택"],
+          "updatedAt": "2026-02-16T00:30:00+09:00"
+        }
+      ]
+    },
+    {
+      "key": "chungcheong",
+      "name": "충청권",
+      "heroImageUrl": "/images/region-fallback/chungcheong.svg",
+      "events": []
+    },
+    {
+      "key": "jeolla",
+      "name": "전라권",
+      "heroImageUrl": "/images/region-fallback/jeolla.svg",
+      "events": []
+    },
+    {
+      "key": "gangwon",
+      "name": "강원권",
+      "heroImageUrl": "/images/region-fallback/gangwon.svg",
+      "events": []
+    },
+    {
+      "key": "gyeongsang",
+      "name": "경상권",
+      "heroImageUrl": "/images/region-fallback/gyeongsang.svg",
+      "events": []
+    },
+    {
+      "key": "jeju",
+      "name": "제주",
+      "heroImageUrl": "/images/region-fallback/jeju.svg",
+      "events": []
+    },
+    {
+      "key": "etc",
+      "name": "기타",
+      "heroImageUrl": "/images/region-fallback/etc.svg",
+      "events": []
+    }
+  ]
+}
