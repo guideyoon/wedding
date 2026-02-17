@@ -42,10 +42,102 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+.tarot-shuffle-stage {
+  position: relative;
+  isolation: isolate;
+  margin-inline: auto;
+  width: min(100%, 420px);
+  height: 250px;
+  perspective: 1200px;
+}
+
+.tarot-shuffle-slot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarot-shuffle-card {
+  width: 128px;
+  aspect-ratio: 2 / 3;
+  transform-style: preserve-3d;
+  will-change: transform, filter;
+  animation-name: tarot-card-shuffle, tarot-card-breathe;
+  animation-duration: var(--duration, 1800ms), 2600ms;
+  animation-delay: var(--delay, 0ms), var(--delay, 0ms);
+  animation-timing-function: cubic-bezier(0.62, 0.04, 0.34, 1), ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  filter: drop-shadow(0 14px 20px rgba(34, 18, 53, 0.24));
+}
+
+.tarot-shuffle-card::after {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 240, 255, 0.26), transparent 70%);
+  filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  animation: tarot-card-glow 1800ms ease-in-out infinite;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes tarot-card-shuffle {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  20% {
+    transform: translate3d(calc(var(--tx, 0px) * 0.66), calc(var(--ty, 0px) * -0.42), 0)
+      rotate(calc(var(--rot, 0deg) * 0.55)) scale(1.03);
+  }
+  45% {
+    transform: translate3d(calc(var(--tx, 0px) * -0.96), calc(var(--ty, 0px) * 0.78), 0)
+      rotate(calc(var(--rot, 0deg) * -0.82)) scale(0.95);
+  }
+  72% {
+    transform: translate3d(calc(var(--tx, 0px) * 1.1), calc(var(--ty, 0px) * 0.25), 0)
+      rotate(calc(var(--rot, 0deg) * 1.06)) scale(1.02);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes tarot-card-breathe {
+  0%,
+  100% {
+    filter: drop-shadow(0 14px 20px rgba(34, 18, 53, 0.24));
+  }
+  50% {
+    filter: drop-shadow(0 20px 28px rgba(34, 18, 53, 0.34));
+  }
+}
+
+@keyframes tarot-card-glow {
+  0%,
+  100% {
+    opacity: 0.04;
+  }
+  50% {
+    opacity: 0.28;
+  }
+}
+
 @media (max-width: 768px) {
   body {
     background:
       radial-gradient(circle at 50% -10%, rgba(226, 198, 246, 0.35), transparent 45%),
       var(--bg);
+  }
+
+  .tarot-shuffle-stage {
+    height: 210px;
+  }
+
+  .tarot-shuffle-card {
+    width: 108px;
   }
 }

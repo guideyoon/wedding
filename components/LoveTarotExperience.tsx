@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 
 type TarotPhase = "intro" | "questions" | "shuffle" | "pick";
 type LoveFocus = "stability" | "passion" | "healing" | "communication" | "commitment";
@@ -34,6 +34,15 @@ interface TarotCard {
 
 const CARD_ROLES = ["현재의 마음", "관계의 흐름", "가까운 미래 조언"] as const;
 const SHUFFLE_MESSAGES = ["카드 에너지를 정돈하고 있어요", "질문을 카드에 연결하고 있어요", "당신의 3장을 준비하고 있어요"];
+const SHUFFLE_STACK_VISUALS = [
+  { id: "s1", cardIndex: 0, tx: -86, ty: -24, rot: -19, delay: 0, duration: 1750 },
+  { id: "s2", cardIndex: 1, tx: 80, ty: -20, rot: 18, delay: 120, duration: 1820 },
+  { id: "s3", cardIndex: 2, tx: -70, ty: 30, rot: -13, delay: 260, duration: 1780 },
+  { id: "s4", cardIndex: 3, tx: 72, ty: 32, rot: 14, delay: 340, duration: 1880 },
+  { id: "s5", cardIndex: 4, tx: -28, ty: -40, rot: -9, delay: 460, duration: 1700 },
+  { id: "s6", cardIndex: 5, tx: 30, ty: 42, rot: 10, delay: 520, duration: 1940 },
+  { id: "s7", cardIndex: 6, tx: 0, ty: 0, rot: 6, delay: 620, duration: 1800 },
+] as const;
 
 const LOVE_FOCUS_PRIORITY: LoveFocus[] = ["communication", "stability", "passion", "healing", "commitment"];
 
@@ -309,9 +318,10 @@ function getDominantFocus(answers: TarotAnswer[]): LoveFocus {
 
 interface TarotCardBackProps {
   index: number;
+  showLabel?: boolean;
 }
 
-function TarotCardBack({ index }: TarotCardBackProps) {
+function TarotCardBack({ index, showLabel = true }: TarotCardBackProps) {
   const cardLabel = `CARD ${String(index + 1).padStart(2, "0")}`;
 
   return (
@@ -331,10 +341,36 @@ function TarotCardBack({ index }: TarotCardBackProps) {
         <path d="M27 69 C40 52, 60 52, 73 69 C60 86, 40 86, 27 69 Z" fill="none" stroke="rgba(248,242,255,0.22)" strokeWidth="1" />
       </svg>
 
-      <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,rgba(43,31,57,0),rgba(20,12,30,0.68))] px-2 pb-2 pt-6 text-center">
-        <p className="text-[10px] font-semibold tracking-[0.16em] text-[rgba(248,242,255,0.86)]">LOVE TAROT</p>
-        <p className="mt-1 text-xs font-semibold text-[rgba(248,242,255,0.95)]">{cardLabel}</p>
-      </div>
+      {showLabel ? (
+        <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,rgba(43,31,57,0),rgba(20,12,30,0.68))] px-2 pb-2 pt-6 text-center">
+          <p className="text-[10px] font-semibold tracking-[0.16em] text-[rgba(248,242,255,0.86)]">LOVE TAROT</p>
+          <p className="mt-1 text-xs font-semibold text-[rgba(248,242,255,0.95)]">{cardLabel}</p>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function ShuffleDeckAnimation() {
+  return (
+    <div className="tarot-shuffle-stage mt-7">
+      {SHUFFLE_STACK_VISUALS.map((visual) => {
+        const style = {
+          "--tx": `${visual.tx}px`,
+          "--ty": `${visual.ty}px`,
+          "--rot": `${visual.rot}deg`,
+          "--delay": `${visual.delay}ms`,
+          "--duration": `${visual.duration}ms`,
+        } as CSSProperties;
+
+        return (
+          <div key={visual.id} className="tarot-shuffle-slot">
+            <div className="tarot-shuffle-card" style={style}>
+              <TarotCardBack index={visual.cardIndex} showLabel={false} />
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -527,15 +563,7 @@ export function LoveTarotExperience() {
           <p className="text-xs font-semibold tracking-[0.18em] text-[var(--ink-faint)]">SHUFFLING</p>
           <h2 className="mt-2 text-2xl font-semibold text-[var(--ink-strong)] md:text-3xl">타로 카드를 섞고 있어요</h2>
           <p className="mt-3 text-sm text-[var(--ink-dim)]">{SHUFFLE_MESSAGES[shuffleMessageIndex]}...</p>
-          <div className="mx-auto mt-7 grid w-full max-w-[340px] grid-cols-3 gap-3">
-            {[0, 1, 2].map((slot) => (
-              <div
-                key={slot}
-                className="aspect-[2/3] rounded-xl border border-[var(--line)] bg-[linear-gradient(165deg,rgba(184,141,216,0.28),rgba(94,79,116,0.18))] animate-pulse"
-                style={{ animationDelay: `${slot * 180}ms` }}
-              />
-            ))}
-          </div>
+          <ShuffleDeckAnimation />
         </section>
       ) : null}
 
