@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 const NAV_ITEMS = [
   { href: "/wedding", label: "웨딩 박람회", released: true },
   { href: "/tarot", label: "연애 타로", released: true },
-  { href: "/match", label: "궁합 보기", released: false },
+  { href: "/match", label: "궁합보기", released: true },
 ] as const;
 
 const WEDDING_HOME_PATH = "/wedding";
