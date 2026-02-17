@@ -2,7 +2,7 @@
 
 import type { MouseEvent } from "react";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const NAV_ITEMS = [
   { href: "/wedding", label: "웨딩 박람회", released: true },
@@ -26,14 +26,14 @@ function isPlainLeftClick(event: MouseEvent<HTMLAnchorElement>): boolean {
 export function TopNav() {
   const pathname = usePathname();
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   const handleLogoClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!isPlainLeftClick(event)) {
       return;
     }
 
-    const shouldResetToWeddingHome = pathname !== WEDDING_HOME_PATH || searchParams.size > 0;
+    const hasSearch = typeof window !== "undefined" && window.location.search.length > 0;
+    const shouldResetToWeddingHome = pathname !== WEDDING_HOME_PATH || hasSearch;
     if (!shouldResetToWeddingHome) {
       return;
     }
