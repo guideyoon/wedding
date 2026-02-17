@@ -23,10 +23,5 @@ jobs:
             echo '{"ok":false,"message":"No response body"}' > response.json
           fi
           cat response.json
-          echo "http_code=$code" >> "$GITHUB_OUTPUT"
-          {
-            echo "response_body<<EOF"
-            cat response.json
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
+          echo "HTTP status: $code"
           test "$code" = "200"
