@@ -307,6 +307,38 @@ function getDominantFocus(answers: TarotAnswer[]): LoveFocus {
   return selected;
 }
 
+interface TarotCardBackProps {
+  index: number;
+}
+
+function TarotCardBack({ index }: TarotCardBackProps) {
+  const cardLabel = `CARD ${String(index + 1).padStart(2, "0")}`;
+
+  return (
+    <div className="relative h-full w-full overflow-hidden rounded-[0.65rem] border border-[rgba(255,255,255,0.3)] bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.22),transparent_34%),linear-gradient(165deg,#4a3460_0%,#6b4b8a_44%,#2f213f_100%)]">
+      <div className="absolute inset-2 rounded-[0.5rem] border border-[rgba(255,255,255,0.25)]" />
+      <div className="absolute inset-4 rounded-[0.45rem] border border-[rgba(255,255,255,0.18)]" />
+
+      <svg viewBox="0 0 100 140" className="absolute inset-0 h-full w-full opacity-90" aria-hidden="true">
+        <circle cx="50" cy="70" r="20" fill="none" stroke="rgba(248,242,255,0.5)" strokeWidth="1.2" />
+        <circle cx="50" cy="70" r="30" fill="none" stroke="rgba(248,242,255,0.28)" strokeWidth="1" />
+        <path d="M50 22 L54 34 L66 34 L56 41 L60 53 L50 45 L40 53 L44 41 L34 34 L46 34 Z" fill="rgba(248,242,255,0.8)" />
+        <path d="M50 88 L53 96 L61 96 L54 101 L57 109 L50 104 L43 109 L46 101 L39 96 L47 96 Z" fill="rgba(248,242,255,0.72)" />
+        <circle cx="21" cy="24" r="2.2" fill="rgba(255,255,255,0.72)" />
+        <circle cx="79" cy="24" r="2.2" fill="rgba(255,255,255,0.72)" />
+        <circle cx="21" cy="116" r="2.2" fill="rgba(255,255,255,0.72)" />
+        <circle cx="79" cy="116" r="2.2" fill="rgba(255,255,255,0.72)" />
+        <path d="M27 69 C40 52, 60 52, 73 69 C60 86, 40 86, 27 69 Z" fill="none" stroke="rgba(248,242,255,0.22)" strokeWidth="1" />
+      </svg>
+
+      <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,rgba(43,31,57,0),rgba(20,12,30,0.68))] px-2 pb-2 pt-6 text-center">
+        <p className="text-[10px] font-semibold tracking-[0.16em] text-[rgba(248,242,255,0.86)]">LOVE TAROT</p>
+        <p className="mt-1 text-xs font-semibold text-[rgba(248,242,255,0.95)]">{cardLabel}</p>
+      </div>
+    </div>
+  );
+}
+
 export function LoveTarotExperience() {
   const [phase, setPhase] = useState<TarotPhase>("intro");
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -538,10 +570,10 @@ export function LoveTarotExperience() {
                   type="button"
                   onClick={() => selectCard(card.id)}
                   disabled={disabled}
-                  className={`aspect-[2/3] rounded-xl border p-3 text-left transition ${
+                  className={`group relative aspect-[2/3] rounded-xl border p-2 text-left transition ${
                     selected
                       ? "border-[var(--accent)] bg-white shadow-[var(--shadow-soft)]"
-                      : "border-[var(--line)] bg-[linear-gradient(165deg,rgba(184,141,216,0.25),rgba(94,79,116,0.17))] hover:border-[var(--accent)]"
+                      : "border-[var(--line)] bg-transparent hover:-translate-y-0.5 hover:border-[var(--accent)]"
                   } ${disabled ? "cursor-not-allowed opacity-60" : ""}`}
                 >
                   {selected ? (
@@ -551,10 +583,7 @@ export function LoveTarotExperience() {
                       <p className="mt-2 text-xs leading-5 text-[var(--ink-dim)]">{card.keyTheme}</p>
                     </div>
                   ) : (
-                    <div className="flex h-full flex-col justify-between">
-                      <p className="text-xs font-semibold text-[var(--ink-faint)]">CARD {String(index + 1).padStart(2, "0")}</p>
-                      <p className="text-sm font-semibold text-[var(--ink-strong)]">뒤집힌 카드</p>
-                    </div>
+                    <TarotCardBack index={index} />
                   )}
                 </button>
               );
