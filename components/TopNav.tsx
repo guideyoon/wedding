@@ -52,14 +52,14 @@ export function TopNav() {
         >
           Wedding damoa
         </Link>
-        <nav className="ml-2 flex items-center gap-1 text-sm">
+        <nav className="ml-2 flex items-center gap-1 overflow-x-auto whitespace-nowrap text-sm">
           {NAV_ITEMS.map((item) => {
             const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
             <Link
               key={item.href}
               href={item.href}
-              className={`rounded-full px-3 py-2 transition ${
+               className={`shrink-0 whitespace-nowrap rounded-full px-3 py-2 transition ${
                 active
                   ? "bg-[var(--soft-accent)] text-[var(--ink-strong)]"
                   : "text-[var(--ink-dim)] hover:bg-white"
