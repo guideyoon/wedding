@@ -4,6 +4,13 @@
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-02-16",
   "compatibility_flags": ["nodejs_compat"],
+  "kv_namespaces": [
+    {
+      "binding": "WEDDING_DATA_KV",
+      "id": "1c381cbfbc9b4792b7cf97e23abc1d35",
+      "preview_id": "f068ec8666c34107927f0b7b9b0b12dd"
+    }
+  ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
