@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: RegionPageProps): Promise<Met
   const regionLabel = REGION_LABELS[region];
   return {
     title: `2026 ${regionLabel} 웨딩박람회 일정`,
-    description: `${regionLabel} 지역 웨딩박람회 일정, 장소, 무료초대권 신청 링크를 확인하세요.`,
+    description: `${regionLabel} 지역 웨딩박람회 일정, 무료 신청, 2026 웨딩박람회 혜택, 사은품 정보를 확인하세요.`,
   };
 }
 

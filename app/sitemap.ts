@@ -44,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.4,
     },
+    {
+      url: `${baseUrl}/tips`,
+      lastModified: today,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
   );
 
   return entries;
