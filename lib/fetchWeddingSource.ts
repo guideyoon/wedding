@@ -17,7 +17,7 @@ export async function fetchWeddingSourceHtml(): Promise<{ html: string; sourceUr
   const response = await fetch(sourceUrl, {
     cache: "no-store",
     headers: {
-      "user-agent": "Mozilla/5.0 (compatible; WeddingEveeBot/1.0; +https://wedding-evee.example)",
+      "user-agent": "Mozilla/5.0 (compatible; WeddingDamoaBot/1.0; +https://wedding-damoa.example)",
     },
   });
 
@@ -35,7 +35,7 @@ export async function fetchDetailHtml(detailUrl: string, sourceUrl: string): Pro
       cache: "no-store",
       headers: {
         "user-agent":
-          "Mozilla/5.0 (compatible; WeddingEveeBot/1.0; +https://wedding-evee.example)",
+          "Mozilla/5.0 (compatible; WeddingDamoaBot/1.0; +https://wedding-damoa.example)",
       },
     });
 

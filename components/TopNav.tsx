@@ -16,7 +16,7 @@ export function TopNav() {
     <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[rgba(255,255,255,0.9)] backdrop-blur">
       <div className="mx-auto flex w-full max-w-[1320px] items-center gap-4 px-4 py-3 md:px-6">
         <Link href="/wedding" className="text-lg font-semibold tracking-tight text-[var(--ink-strong)]">
-          Wedding Evee
+          Wedding damoa
         </Link>
         <nav className="ml-2 flex items-center gap-1 text-sm">
           {NAV_ITEMS.map((item) => {

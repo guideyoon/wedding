@@ -22,8 +22,8 @@ const titleSerif = Noto_Serif_KR({
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: "Wedding Evee | 웨딩박람회 일정",
-    template: "%s | Wedding Evee",
+    default: "Wedding damoa | 웨딩박람회 일정",
+    template: "%s | Wedding damoa",
   },
   description: "전국 웨딩박람회 일정과 무료초대권 신청 링크를 지역별로 빠르게 확인하세요.",
 };

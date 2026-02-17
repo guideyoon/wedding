@@ -1,4 +1,4 @@
-import { load } from "cheerio";
+﻿import { load } from "cheerio";
 import type { AnyNode } from "domhandler";
 
 import { parseDateRangeText } from "@/lib/date";
@@ -24,8 +24,27 @@ export interface ParsedSourceResult {
   events: ParsedEventCandidate[];
 }
 
-const TITLE_KEYWORD_REGEX = /(웨딩|결혼|박람회|페어|허니문|스드메)/i;
-const BADGE_PATTERNS = ["무료초대", "무료 초대", "초대권", "사전예약", "현장혜택"];
+const TITLE_KEYWORD_REGEX = /(wedding|fair|expo|\uc6e8\ub529|\uacb0\ud63c|\ubc15\ub78c\ud68c|\ud398\uc5b4|\ud5c8\ub2c8\ubb38|\uc2a4\ub4dc\uba54)/i;
+const BADGE_PATTERNS = [
+  "\ubb34\ub8cc\ucd08\ub300",
+  "\ubb34\ub8cc \ucd08\ub300",
+  "\ucd08\ub300\uad8c",
+  "\uc0ac\uc804\uc608\uc57d",
+  "\ud604\uc7a5\ud61c\ud0dd",
+];
+
+const SECTION_REGION_MAP: Record<string, DataRegionKey> = {
+  sec1: "seoul",
+  sec2: "gyeonggi",
+  sec3: "incheon",
+  sec4: "busan",
+  sec5: "chungcheong",
+  sec6: "jeolla",
+  sec7: "gangwon",
+  sec8: "gyeongsang",
+  sec9: "jeju",
+  sec10: "etc",
+};
 
 function cleanText(input: string): string {
   return input.replace(/\s+/g, " ").replace(/[|]/g, " ").trim();
@@ -41,21 +60,28 @@ function firstNonEmpty(values: Array<string | undefined | null>): string {
 }
 
 function extractDateRangeText(input: string): string {
-  const match = input.match(
-    /\d{4}[.\-/]\d{1,2}[.\-/]\d{1,2}[^0-9]*(?:[-~][^0-9]*)?\d{4}[.\-/]\d{1,2}[.\-/]\d{1,2}/,
+  const rangeMatch = input.match(
+    /\d{4}[.\-/]\d{1,2}[.\-/]\d{1,2}[^0-9]{0,10}[-~][^0-9]{0,10}\d{4}[.\-/]\d{1,2}[.\-/]\d{1,2}/,
   );
-  if (match) {
-    return cleanText(match[0]);
+  if (rangeMatch) {
+    return cleanText(rangeMatch[0]);
   }
+
+  const singleMatch = input.match(/\d{4}[.\-/]\d{1,2}[.\-/]\d{1,2}/);
+  if (singleMatch) {
+    return cleanText(singleMatch[0]);
+  }
+
   return "";
 }
 
 function extractVenueText(input: string): string {
   const lines = input.split(/[\n\r]/).map(cleanText).filter(Boolean);
   const venueLine =
-    lines.find((line) => /(홀|센터|웨딩|호텔|컨벤션|코엑스|벡스코|주소|구|시)/.test(line)) ??
-    "";
-  return venueLine.slice(0, 120);
+    lines.find((line) =>
+      /(\ud638\ud154|\uc13c\ud130|\uc6e8\ub529|\ucee8\ubca4\uc158|\ucf54\uc5d1\uc2a4|\ubca1\uc2a4\ucf54|\uc8fc\uc18c|\uad6c|\uc2dc)/.test(line),
+    ) ?? "";
+  return venueLine.slice(0, 160);
 }
 
 function extractBadges(input: string): string[] {
@@ -65,6 +91,16 @@ function extractBadges(input: string): string[] {
 
 function detectRegionFromContext(input: string): DataRegionKey | null {
   return toDataRegionKey(input);
+}
+
+function detectRegionFromSection(sectionElement: AnyNode, html$: ReturnType<typeof load>): DataRegionKey {
+  const id = html$(sectionElement).attr("id")?.trim() ?? "";
+  if (id && SECTION_REGION_MAP[id]) {
+    return SECTION_REGION_MAP[id];
+  }
+
+  const heading = cleanText(html$(sectionElement).find("h2").first().text());
+  return detectRegionFromContext(heading) ?? "etc";
 }
 
 function getContextText(element: AnyNode, html$: ReturnType<typeof load>): string {
@@ -121,7 +157,71 @@ function extractRegionHeroImages(
   return result;
 }
 
-export function parseWeddingSource(html: string, sourceUrl: string): ParsedSourceResult {
+function parseSectionCards(html: string, sourceUrl: string): {
+  events: ParsedEventCandidate[];
+  regionHeroImages: Partial<Record<DataRegionKey, string>>;
+} {
+  const html$ = load(html);
+  const events: ParsedEventCandidate[] = [];
+  const regionHeroImages: Partial<Record<DataRegionKey, string>> = {};
+  const dedupe = new Set<string>();
+
+  const sectionNodes = html$("div.contents[id^='sec']").toArray();
+
+  for (const sectionNode of sectionNodes) {
+    const region = detectRegionFromSection(sectionNode, html$);
+    const cardNodes = html$(sectionNode).find("ul.list1").toArray();
+
+    for (const cardNode of cardNodes) {
+      const card = html$(cardNode);
+      const anchor = card.parent("a[href]").first();
+
+      const title = cleanText(card.find(".naming").first().text());
+      const dateRangeText = cleanText(card.find(".time").first().text());
+      const venueText = cleanText(card.find(".area").first().text());
+      const detailHref = cleanText(anchor.attr("href") ?? "");
+      const detailUrl = detailHref ? toAbsoluteUrl(detailHref, sourceUrl) : "";
+      const imageSrc = cleanText(card.find("img[src]").first().attr("src") ?? "");
+      const heroImageUrl = imageSrc ? toAbsoluteUrl(imageSrc, sourceUrl) : "";
+      const contextText = cleanText(`${title} ${dateRangeText} ${venueText}`);
+      const parsedRange = parseDateRangeText(dateRangeText || extractDateRangeText(contextText));
+      const badges = extractBadges(contextText);
+
+      if (!title || !dateRangeText || !venueText) {
+        continue;
+      }
+
+      const dedupeKey = `${region}|${title}|${dateRangeText}|${venueText}`;
+      if (dedupe.has(dedupeKey)) {
+        continue;
+      }
+      dedupe.add(dedupeKey);
+
+      if (!regionHeroImages[region] && heroImageUrl) {
+        regionHeroImages[region] = heroImageUrl;
+      }
+
+      events.push({
+        region,
+        title,
+        dateRangeText,
+        startDate: parsedRange?.startDate ?? "",
+        endDate: parsedRange?.endDate ?? "",
+        venueText,
+        detailUrl,
+        heroImageUrl,
+        badges,
+      });
+    }
+  }
+
+  return { events, regionHeroImages };
+}
+
+function parseWithGenericAnchorStrategy(html: string, sourceUrl: string): {
+  events: ParsedEventCandidate[];
+  regionHeroImages: Partial<Record<DataRegionKey, string>>;
+} {
   const html$ = load(html);
   const anchors = html$("a[href]").toArray();
   const events: ParsedEventCandidate[] = [];
@@ -170,9 +270,26 @@ export function parseWeddingSource(html: string, sourceUrl: string): ParsedSourc
   }
 
   return {
-    generatedAt: new Date().toISOString(),
-    regionHeroImages: extractRegionHeroImages(html$, sourceUrl),
     events,
+    regionHeroImages: extractRegionHeroImages(html$, sourceUrl),
+  };
+}
+
+export function parseWeddingSource(html: string, sourceUrl: string): ParsedSourceResult {
+  const structured = parseSectionCards(html, sourceUrl);
+  if (structured.events.length > 0) {
+    return {
+      generatedAt: new Date().toISOString(),
+      regionHeroImages: structured.regionHeroImages,
+      events: structured.events,
+    };
+  }
+
+  const fallback = parseWithGenericAnchorStrategy(html, sourceUrl);
+  return {
+    generatedAt: new Date().toISOString(),
+    regionHeroImages: fallback.regionHeroImages,
+    events: fallback.events,
   };
 }
 

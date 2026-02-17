@@ -1,4 +1,4 @@
-# Wedding Evee
+# Wedding damoa
 
 웨딩 박람회 일정 수집/노출 및 CPA 전환 최적화를 목표로 한 Next.js 기반 디렉터리 서비스입니다.
 

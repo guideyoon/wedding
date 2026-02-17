@@ -1,4 +1,4 @@
-const FALLBACK_SITE_URL = "https://wedding-evee.example";
+const FALLBACK_SITE_URL = "https://wedding-damoa.example";
 
 function normalizeSiteUrl(candidate: string): string {
   try {
