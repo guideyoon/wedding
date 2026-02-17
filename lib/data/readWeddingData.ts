@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
+import seedWeddingDataset from "@/public/data/wedding.json";
 import { getWeddingDataKv, WEDDING_DATA_KV_KEY } from "@/lib/data/getWeddingDataKv";
 import { getNowIsoString } from "@/lib/date";
 import { REGION_FALLBACK_IMAGES, REGION_LABELS } from "@/lib/regions";
@@ -47,6 +48,9 @@ function countEvents(dataset: WeddingDataset | null): number {
   return dataset.regions.reduce((sum, region) => sum + region.events.length, 0);
 }
 
+const SEEDED_DATASET = seedWeddingDataset as WeddingDataset;
+const SEEDED_DATASET_EVENT_COUNT = countEvents(SEEDED_DATASET);
+
 export async function readWeddingData(): Promise<WeddingDataset> {
   let kvDataset: WeddingDataset | null = null;
   const kv = await getWeddingDataKv();
@@ -68,7 +72,17 @@ export async function readWeddingData(): Promise<WeddingDataset> {
 
   const kvCount = countEvents(kvDataset);
   const fileCount = countEvents(fileDataset);
+  const seededCount = SEEDED_DATASET_EVENT_COUNT;
 
+  if (kvDataset && kvCount > 0 && kvCount >= fileCount && kvCount >= seededCount) {
+    return kvDataset;
+  }
+  if (fileDataset && fileCount > 0 && fileCount >= seededCount) {
+    return fileDataset;
+  }
+  if (seededCount > 0) {
+    return SEEDED_DATASET;
+  }
   if (kvDataset && kvCount >= fileCount) {
     return kvDataset;
   }
