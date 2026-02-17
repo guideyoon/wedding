@@ -40,27 +40,40 @@ function parseDataset(raw: string | null): WeddingDataset | null {
   }
 }
 
+function countEvents(dataset: WeddingDataset | null): number {
+  if (!dataset) {
+    return 0;
+  }
+  return dataset.regions.reduce((sum, region) => sum + region.events.length, 0);
+}
+
 export async function readWeddingData(): Promise<WeddingDataset> {
+  let kvDataset: WeddingDataset | null = null;
   const kv = await getWeddingDataKv();
   if (kv) {
     try {
-      const kvDataset = parseDataset(await kv.get(WEDDING_DATA_KV_KEY));
-      if (kvDataset) {
-        return kvDataset;
-      }
+      kvDataset = parseDataset(await kv.get(WEDDING_DATA_KV_KEY));
     } catch {
       // Fall back to file storage when KV reads fail.
     }
   }
 
+  let fileDataset: WeddingDataset | null = null;
   try {
     const raw = await readFile(DATA_FILE_PATH, "utf-8");
-    const fileDataset = parseDataset(raw);
-    if (fileDataset) {
-      return fileDataset;
-    }
+    fileDataset = parseDataset(raw);
   } catch {
     // Fall through to empty dataset.
+  }
+
+  const kvCount = countEvents(kvDataset);
+  const fileCount = countEvents(fileDataset);
+
+  if (kvDataset && kvCount >= fileCount) {
+    return kvDataset;
+  }
+  if (fileDataset) {
+    return fileDataset;
   }
 
   return buildEmptyDataset();
