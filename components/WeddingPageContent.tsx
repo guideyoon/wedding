@@ -72,7 +72,7 @@ export async function WeddingPageContent({ region, searchParams }: WeddingPageCo
           </div>
 
           <div className="space-y-4">
-            <HeroSection regionLabel={currentRegionLabel} updatedAt={dataset.generatedAt} topEvent={topEvent} />
+            <HeroSection regionLabel={currentRegionLabel} updatedAt={dataset.generatedAt} />
 
             {missingCpa ? (
               <section className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
