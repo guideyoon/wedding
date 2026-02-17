@@ -21,12 +21,9 @@ export function EventList({ events, regionForTracking }: EventListProps) {
   return (
     <section id="event-list" className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
       {events.map((event, index) => (
-        <EventCard
-          key={event.id}
-          event={event}
-          position={index + 1}
-          regionForTracking={regionForTracking}
-        />
+        <div key={event.id} id={index === 0 ? "first-event-card" : undefined}>
+          <EventCard event={event} position={index + 1} regionForTracking={regionForTracking} />
+        </div>
       ))}
     </section>
   );
