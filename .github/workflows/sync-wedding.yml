@@ -30,26 +30,3 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
           test "$code" = "200"
-
-      - name: Send email notification
-        if: ${{ always() && secrets.SMTP_SERVER != '' && secrets.SMTP_PORT != '' && secrets.SMTP_USERNAME != '' && secrets.SMTP_PASSWORD != '' && secrets.NOTIFY_EMAIL_TO != '' && secrets.NOTIFY_EMAIL_FROM != '' }}
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: ${{ secrets.SMTP_SERVER }}
-          server_port: ${{ secrets.SMTP_PORT }}
-          secure: true
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "[Wedding Damoa] Sync ${{ job.status }} (HTTP ${{ steps.sync_call.outputs.http_code }})"
-          to: ${{ secrets.NOTIFY_EMAIL_TO }}
-          from: ${{ secrets.NOTIFY_EMAIL_FROM }}
-          body: |
-            Workflow: ${{ github.workflow }}
-            Repository: ${{ github.repository }}
-            Status: ${{ job.status }}
-            Run URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            Sync URL: ${{ secrets.SYNC_URL }}/api/cron/sync-wedding
-            HTTP Code: ${{ steps.sync_call.outputs.http_code }}
-
-            Response:
-            ${{ steps.sync_call.outputs.response_body }}
