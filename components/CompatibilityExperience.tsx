@@ -531,38 +531,58 @@ export function CompatibilityExperience() {
               {currentQuestion.prompt}
             </h2>
 
-            <div className="mt-4 grid gap-3 md:grid-cols-2">
-              <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
-                남자 답변
-                <select
-                  value={currentAnswer.male ?? ""}
-                  onChange={(event) => handleValueChange(currentQuestion.id, "male", event.target.value)}
-                  className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
-                >
-                  <option value="">선택하세요</option>
-                  {currentQuestion.options.map((option, index) => (
-                    <option key={`${currentQuestion.id}_male_${index}`} value={index}>
-                      {index} · {option}
-                    </option>
-                  ))}
-                </select>
-              </label>
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              <section className="space-y-2">
+                <p className="text-sm font-medium text-[var(--ink-dim)]">남자 답변</p>
+                <div className="grid gap-2">
+                  {currentQuestion.options.map((option, index) => {
+                    const selected = currentAnswer.male === index;
+                    return (
+                      <button
+                        key={`${currentQuestion.id}_male_${index}`}
+                        type="button"
+                        onClick={() => handleValueChange(currentQuestion.id, "male", String(index))}
+                        className={`rounded-xl border px-3 py-3 text-left text-sm transition ${
+                          selected
+                            ? "border-[var(--accent)] bg-[var(--soft-accent)] text-[var(--ink-strong)]"
+                            : "border-[var(--line)] bg-white text-[var(--ink-dim)] hover:border-[var(--accent)]"
+                        }`}
+                      >
+                        <span className="mr-2 inline-flex h-5 w-5 items-center justify-center rounded-full border border-current text-xs">
+                          {index}
+                        </span>
+                        {option}
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
 
-              <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
-                여자 답변
-                <select
-                  value={currentAnswer.female ?? ""}
-                  onChange={(event) => handleValueChange(currentQuestion.id, "female", event.target.value)}
-                  className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
-                >
-                  <option value="">선택하세요</option>
-                  {currentQuestion.options.map((option, index) => (
-                    <option key={`${currentQuestion.id}_female_${index}`} value={index}>
-                      {index} · {option}
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <section className="space-y-2">
+                <p className="text-sm font-medium text-[var(--ink-dim)]">여자 답변</p>
+                <div className="grid gap-2">
+                  {currentQuestion.options.map((option, index) => {
+                    const selected = currentAnswer.female === index;
+                    return (
+                      <button
+                        key={`${currentQuestion.id}_female_${index}`}
+                        type="button"
+                        onClick={() => handleValueChange(currentQuestion.id, "female", String(index))}
+                        className={`rounded-xl border px-3 py-3 text-left text-sm transition ${
+                          selected
+                            ? "border-[var(--accent)] bg-[var(--soft-accent)] text-[var(--ink-strong)]"
+                            : "border-[var(--line)] bg-white text-[var(--ink-dim)] hover:border-[var(--accent)]"
+                        }`}
+                      >
+                        <span className="mr-2 inline-flex h-5 w-5 items-center justify-center rounded-full border border-current text-xs">
+                          {index}
+                        </span>
+                        {option}
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
             </div>
 
             {questionError ? (
