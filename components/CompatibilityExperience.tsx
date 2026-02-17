@@ -2,6 +2,9 @@
 
 import { useMemo, useState } from "react";
 
+import { ResultShareButton } from "@/components/ResultShareButton";
+import { WeddingGuideBox } from "@/components/WeddingGuideBox";
+
 type Domain = "communication" | "affection" | "conflict" | "lifestyle" | "finance" | "values";
 type CompatibilityType = "안정형" | "성장형" | "열정형" | "친구형" | "롤러코스터형";
 
@@ -688,6 +691,8 @@ export function CompatibilityExperience() {
             본 결과는 재미와 점검 목적의 참고 자료입니다. 실제 관계는 대화와 경험을 바탕으로 유연하게 조정해 주세요.
           </p>
 
+          <WeddingGuideBox source="compatibility_result" />
+
           <div className="mt-4 flex flex-wrap gap-2">
             <button
               type="button"
@@ -711,6 +716,12 @@ export function CompatibilityExperience() {
               처음부터 다시
             </button>
           </div>
+
+          <ResultShareButton
+            title="궁합보기 결과"
+            text="궁합보기 테스트 결과를 확인해 보세요."
+            className="mt-4"
+          />
         </section>
       ) : null}
     </main>

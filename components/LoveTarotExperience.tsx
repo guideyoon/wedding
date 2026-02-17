@@ -2,6 +2,9 @@
 
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 
+import { ResultShareButton } from "@/components/ResultShareButton";
+import { WeddingGuideBox } from "@/components/WeddingGuideBox";
+
 type TarotPhase = "intro" | "questions" | "shuffle" | "pick";
 type LoveFocus = "stability" | "passion" | "healing" | "communication" | "commitment";
 
@@ -677,6 +680,8 @@ export function LoveTarotExperience() {
               <p className="mt-2 text-sm leading-6 text-[var(--ink-dim)]">{focusSummary.action}</p>
             </article>
 
+            <WeddingGuideBox source="tarot_result" />
+
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <button
                 type="button"
@@ -700,6 +705,12 @@ export function LoveTarotExperience() {
                 팝업 닫기
               </button>
             </div>
+
+            <ResultShareButton
+              title="연애 타로 결과"
+              text="연애 타로 테스트 결과를 확인해 보세요."
+              className="mt-4"
+            />
           </section>
         </div>
       ) : null}

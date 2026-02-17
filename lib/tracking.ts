@@ -74,3 +74,10 @@ export function trackFilterApply(params: {
 }): void {
   emitTrackingEvent({ event: "filter_apply", ...params });
 }
+
+export function trackClickWeddingGuide(
+  region: RegionKey,
+  source: "tarot_result" | "compatibility_result",
+): void {
+  emitTrackingEvent({ event: "click_wedding_guide", region, source });
+}

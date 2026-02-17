@@ -53,10 +53,11 @@ export interface EventFilters {
 }
 
 export interface TrackingPayload {
-  event: "view_region" | "click_cpa" | "filter_apply";
+  event: "view_region" | "click_cpa" | "filter_apply" | "click_wedding_guide";
   region: RegionKey;
   eventId?: string;
   position?: number;
+  source?: "tarot_result" | "compatibility_result";
   query?: string;
   timeframe?: TimeframeFilter;
   freeInviteOnly?: boolean;
