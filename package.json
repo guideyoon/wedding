@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "cpa:export": "node scripts/cpa-export-mapping.mjs",
+    "cpa:apply": "node scripts/cpa-apply-mapping.mjs",
+    "cpa:status": "node scripts/cpa-status.mjs",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"

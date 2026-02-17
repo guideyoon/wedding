@@ -73,16 +73,8 @@ export function EventCard({ event, position, regionForTracking }: EventCardProps
         </h3>
         <p className="text-sm text-[var(--ink-dim)]">📅 {event.dateRangeText || "일정 확인 필요"}</p>
         <p className="line-clamp-2 text-sm text-[var(--ink-dim)]">📍 {event.venueText || "장소 정보 확인 필요"}</p>
-        <div className="flex items-center justify-between gap-3 pt-1">
+        <div className="pt-1">
           <CpaButton href={goHref} region={regionForTracking} eventId={event.id} position={position} />
-          <Link
-            href={event.detailUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative z-20 text-xs font-medium text-[var(--ink-faint)] underline-offset-2 hover:underline"
-          >
-            상세 보기
-          </Link>
         </div>
       </div>
     </article>
