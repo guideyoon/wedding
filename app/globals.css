@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  --font-body: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  --font-title: "Nanum Myeongjo", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Serif KR", serif;
   --bg: #f4f0f8;
   --paper: #fffdfd;
   --ink: #1f1a26;
@@ -26,13 +28,13 @@ body {
     radial-gradient(circle at 85% 0%, rgba(244, 198, 224, 0.25), transparent 40%),
     var(--bg);
   color: var(--ink);
-  font-family: var(--font-body), "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-family: var(--font-body);
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--font-title), Georgia, serif;
+  font-family: var(--font-title);
 }
 
 a,

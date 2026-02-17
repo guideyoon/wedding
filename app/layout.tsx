@@ -1,23 +1,10 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Noto_Sans_KR, Noto_Serif_KR } from "next/font/google";
 
 import { Footer } from "@/components/Footer";
 import { TopNav } from "@/components/TopNav";
 import { getSiteUrl } from "@/lib/site";
 import "./globals.css";
-
-const bodySans = Noto_Sans_KR({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
-
-const titleSerif = Noto_Serif_KR({
-  variable: "--font-title",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
@@ -39,7 +26,7 @@ export default function RootLayout({
 
   return (
     <html lang="ko">
-      <body className={`${bodySans.variable} ${titleSerif.variable} bg-[var(--bg)] text-[var(--ink)] antialiased`}>
+      <body className="bg-[var(--bg)] text-[var(--ink)] antialiased">
         <TopNav />
         {children}
         <Footer />
