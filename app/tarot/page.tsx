@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 
-import { ComingSoonPanel } from "@/components/ComingSoonPanel";
+import { LoveTarotExperience } from "@/components/LoveTarotExperience";
 
 export const metadata: Metadata = {
   title: "연애 타로",
-  description: "연애 타로 서비스는 곧 공개됩니다.",
+  description: "연애 질문 10개와 3장 타로 리딩으로 현재 감정 흐름과 관계 방향을 확인해 보세요.",
 };
 
 export default function TarotPage() {
-  return (
-    <ComingSoonPanel
-      title="연애 타로"
-      description="현재 준비 중인 기능입니다. 웨딩 박람회 일정 서비스 안정화 후 순차 공개됩니다."
-    />
-  );
+  return <LoveTarotExperience />;
 }
-
