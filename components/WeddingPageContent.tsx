@@ -90,7 +90,10 @@ export async function WeddingPageContent({ region, searchParams }: WeddingPageCo
             />
 
             <section className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 shadow-[var(--shadow-soft)]">
-              <div className="mb-3 flex flex-wrap items-center gap-2 border-b border-[var(--line)] pb-3">
+              <div
+                id="region-list-heading"
+                className="mb-3 flex scroll-mt-20 flex-wrap items-center gap-2 border-b border-[var(--line)] pb-3"
+              >
                 <h2 className="text-lg font-semibold text-[var(--ink-strong)]">{currentRegionLabel}</h2>
                 <span className="rounded-full bg-[var(--soft-accent)] px-2 py-1 text-xs font-medium text-[var(--ink-strong)]">
                   {filteredEvents.length}개

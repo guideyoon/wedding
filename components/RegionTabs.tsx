@@ -40,7 +40,7 @@ export function RegionTabs({ activeRegion }: RegionTabsProps) {
     }
 
     event.preventDefault();
-    router.push(`${toRegionHref(region)}#first-event-card`, { scroll: true });
+    router.push(`${toRegionHref(region)}#region-list-heading`, { scroll: true });
   };
 
   return (
