@@ -258,6 +258,8 @@ function createInitialAnswers(): Record<string, PairAnswer> {
   }, {});
 }
 
+type CompatibilityStep = "basic" | "questions" | "result";
+
 export function CompatibilityExperience() {
   const [maleName, setMaleName] = useState("");
   const [femaleName, setFemaleName] = useState("");
@@ -268,17 +270,16 @@ export function CompatibilityExperience() {
   const [meetingChannel, setMeetingChannel] = useState("");
   const [relationshipGoal, setRelationshipGoal] = useState("");
   const [answers, setAnswers] = useState<Record<string, PairAnswer>>(createInitialAnswers);
-  const [submitted, setSubmitted] = useState(false);
+  const [step, setStep] = useState<CompatibilityStep>("basic");
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const [basicInfoError, setBasicInfoError] = useState<string | null>(null);
+  const [questionError, setQuestionError] = useState<string | null>(null);
 
-  const answeredCount = useMemo(
-    () =>
-      QUESTIONS.filter(
-        (question) => answers[question.id].male !== null && answers[question.id].female !== null,
-      ).length,
-    [answers],
-  );
+  const currentQuestion = QUESTIONS[questionIndex];
+  const currentAnswer = answers[currentQuestion.id];
+  const progressPercent = Math.round(((questionIndex + 1) / QUESTIONS.length) * 100);
 
-  const allRequiredFilled =
+  const basicInfoValid =
     maleName.trim().length >= 1 &&
     maleName.trim().length <= 20 &&
     femaleName.trim().length >= 1 &&
@@ -286,26 +287,76 @@ export function CompatibilityExperience() {
     Boolean(maleBirthdate) &&
     Boolean(femaleBirthdate) &&
     Boolean(relationStage) &&
-    Boolean(disclosureLevel) &&
-    answeredCount === QUESTIONS.length;
+    Boolean(disclosureLevel);
+
+  const answeredCount = useMemo(
+    () => QUESTIONS.filter((question) => answers[question.id].male !== null && answers[question.id].female !== null).length,
+    [answers],
+  );
+
+  const allQuestionsAnswered = answeredCount === QUESTIONS.length;
 
   const result = useMemo(
-    () => (submitted && allRequiredFilled ? computeCompatibility(answers) : null),
-    [submitted, allRequiredFilled, answers],
+    () => (step === "result" && allQuestionsAnswered ? computeCompatibility(answers) : null),
+    [step, allQuestionsAnswered, answers],
   );
 
   const handleValueChange = (qId: string, side: "male" | "female", value: string) => {
+    const parsedValue = value === "" ? null : Number(value);
     setAnswers((prev) => ({
       ...prev,
       [qId]: {
         ...prev[qId],
-        [side]: Number(value),
+        [side]: parsedValue,
       },
     }));
+    setQuestionError(null);
+  };
+
+  const startQuestionFlow = () => {
+    if (!basicInfoValid) {
+      setBasicInfoError("필수 기본정보를 먼저 입력해 주세요.");
+      return;
+    }
+
+    setBasicInfoError(null);
+    setQuestionError(null);
+    setStep("questions");
+    setQuestionIndex(0);
+  };
+
+  const goToPreviousQuestion = () => {
+    if (questionIndex === 0) {
+      return;
+    }
+
+    setQuestionError(null);
+    setQuestionIndex((prev) => prev - 1);
+  };
+
+  const goToNextQuestion = () => {
+    if (currentAnswer.male === null || currentAnswer.female === null) {
+      setQuestionError("남자/여자 답변을 모두 선택해 주세요.");
+      return;
+    }
+
+    setQuestionError(null);
+    if (questionIndex === QUESTIONS.length - 1) {
+      setStep("result");
+      return;
+    }
+
+    setQuestionIndex((prev) => prev + 1);
+  };
+
+  const restartQuestions = () => {
+    setAnswers(createInitialAnswers());
+    setQuestionError(null);
+    setQuestionIndex(0);
+    setStep("questions");
   };
 
   const resetAll = () => {
-    setSubmitted(false);
     setMaleName("");
     setFemaleName("");
     setMaleBirthdate("");
@@ -315,6 +366,10 @@ export function CompatibilityExperience() {
     setMeetingChannel("");
     setRelationshipGoal("");
     setAnswers(createInitialAnswers());
+    setQuestionIndex(0);
+    setStep("basic");
+    setBasicInfoError(null);
+    setQuestionError(null);
   };
 
   return (
@@ -327,177 +382,224 @@ export function CompatibilityExperience() {
         </p>
       </section>
 
-      <section className="mt-5 rounded-3xl border border-[var(--line)] bg-[var(--paper)] p-5 shadow-[var(--shadow-soft)] md:p-6">
-        <h2 className="text-xl font-semibold text-[var(--ink-strong)]">기본 정보</h2>
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
-            남자 이름 (필수)
-            <input
-              value={maleName}
-              onChange={(event) => setMaleName(event.target.value)}
-              maxLength={20}
-              className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
-            />
-          </label>
-          <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
-            여자 이름 (필수)
-            <input
-              value={femaleName}
-              onChange={(event) => setFemaleName(event.target.value)}
-              maxLength={20}
-              className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
-            />
-          </label>
-          <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
-            남자 생년월일 (필수)
-            <input
-              type="date"
-              value={maleBirthdate}
-              onChange={(event) => setMaleBirthdate(event.target.value)}
-              className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
-            />
-          </label>
-          <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
-            여자 생년월일 (필수)
-            <input
-              type="date"
-              value={femaleBirthdate}
-              onChange={(event) => setFemaleBirthdate(event.target.value)}
-              className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
-            />
-          </label>
-          <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
-            관계 단계 (필수)
-            <select
-              value={relationStage}
-              onChange={(event) => setRelationStage(event.target.value)}
-              className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
-            >
-              <option value="">선택하세요</option>
-              <option value="썸">썸</option>
-              <option value="연애">연애</option>
-              <option value="결혼 또는 동거">결혼 또는 동거</option>
-            </select>
-          </label>
-          <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
-            공개 수준 (필수)
-            <select
-              value={disclosureLevel}
-              onChange={(event) => setDisclosureLevel(event.target.value)}
-              className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
-            >
-              <option value="">선택하세요</option>
-              <option value="재미로만 보기">재미로만 보기</option>
-              <option value="관계 점검용">관계 점검용</option>
-              <option value="상담 참고용">상담 참고용</option>
-            </select>
-          </label>
-          <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
-            만남 경로 (선택)
-            <select
-              value={meetingChannel}
-              onChange={(event) => setMeetingChannel(event.target.value)}
-              className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
-            >
-              <option value="">선택 안함</option>
-              <option value="지인 소개">지인 소개</option>
-              <option value="직장 또는 학교">직장 또는 학교</option>
-              <option value="온라인">온라인</option>
-              <option value="기타">기타</option>
-            </select>
-          </label>
-          <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
-            관계 목표 (선택)
-            <select
-              value={relationshipGoal}
-              onChange={(event) => setRelationshipGoal(event.target.value)}
-              className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
-            >
-              <option value="">선택 안함</option>
-              <option value="가볍게">가볍게</option>
-              <option value="진지하게">진지하게</option>
-              <option value="아직 모름">아직 모름</option>
-            </select>
-          </label>
-        </div>
-      </section>
-
-      <section className="mt-5 space-y-4">
-        <header className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 shadow-[var(--shadow-soft)]">
-          <p className="text-sm text-[var(--ink-dim)]">
-            진행 상태: <span className="font-semibold text-[var(--ink-strong)]">{answeredCount} / {QUESTIONS.length}</span>
+      {step === "basic" ? (
+        <section className="mt-5 rounded-3xl border border-[var(--line)] bg-[var(--paper)] p-5 shadow-[var(--shadow-soft)] md:p-6">
+          <h2 className="text-xl font-semibold text-[var(--ink-strong)]">STEP 1 · 기본정보 입력</h2>
+          <p className="mt-2 text-sm text-[var(--ink-dim)]">
+            먼저 필수 기본정보를 입력한 뒤, 질문을 한 문항씩 진행합니다.
           </p>
-        </header>
-        {QUESTIONS.map((question) => (
-          <article
-            key={question.id}
-            className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 shadow-[var(--shadow-soft)] md:p-5"
-          >
-            <p className="text-xs font-semibold tracking-wide text-[var(--ink-faint)]">
-              {question.id} · {DOMAIN_NAME[question.domain]}
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
+              남자 이름 (필수)
+              <input
+                value={maleName}
+                onChange={(event) => setMaleName(event.target.value)}
+                maxLength={20}
+                className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
+              />
+            </label>
+            <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
+              여자 이름 (필수)
+              <input
+                value={femaleName}
+                onChange={(event) => setFemaleName(event.target.value)}
+                maxLength={20}
+                className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
+              />
+            </label>
+            <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
+              남자 생년월일 (필수)
+              <input
+                type="date"
+                value={maleBirthdate}
+                onChange={(event) => setMaleBirthdate(event.target.value)}
+                className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
+              />
+            </label>
+            <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
+              여자 생년월일 (필수)
+              <input
+                type="date"
+                value={femaleBirthdate}
+                onChange={(event) => setFemaleBirthdate(event.target.value)}
+                className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
+              />
+            </label>
+            <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
+              관계 단계 (필수)
+              <select
+                value={relationStage}
+                onChange={(event) => setRelationStage(event.target.value)}
+                className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
+              >
+                <option value="">선택하세요</option>
+                <option value="썸">썸</option>
+                <option value="연애">연애</option>
+                <option value="결혼 또는 동거">결혼 또는 동거</option>
+              </select>
+            </label>
+            <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
+              공개 수준 (필수)
+              <select
+                value={disclosureLevel}
+                onChange={(event) => setDisclosureLevel(event.target.value)}
+                className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
+              >
+                <option value="">선택하세요</option>
+                <option value="재미로만 보기">재미로만 보기</option>
+                <option value="관계 점검용">관계 점검용</option>
+                <option value="상담 참고용">상담 참고용</option>
+              </select>
+            </label>
+            <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
+              만남 경로 (선택)
+              <select
+                value={meetingChannel}
+                onChange={(event) => setMeetingChannel(event.target.value)}
+                className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
+              >
+                <option value="">선택 안함</option>
+                <option value="지인 소개">지인 소개</option>
+                <option value="직장 또는 학교">직장 또는 학교</option>
+                <option value="온라인">온라인</option>
+                <option value="기타">기타</option>
+              </select>
+            </label>
+            <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
+              관계 목표 (선택)
+              <select
+                value={relationshipGoal}
+                onChange={(event) => setRelationshipGoal(event.target.value)}
+                className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
+              >
+                <option value="">선택 안함</option>
+                <option value="가볍게">가볍게</option>
+                <option value="진지하게">진지하게</option>
+                <option value="아직 모름">아직 모름</option>
+              </select>
+            </label>
+          </div>
+          {basicInfoError ? (
+            <p className="mt-4 rounded-lg border border-[#efbfca] bg-[#fff4f6] px-3 py-2 text-sm text-[#9f4256]">
+              {basicInfoError}
             </p>
-            <h3 className="mt-1 text-lg font-semibold text-[var(--ink-strong)] md:text-xl">{question.prompt}</h3>
+          ) : null}
+          <div className="mt-4 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={startQuestionFlow}
+              className="inline-flex h-11 items-center justify-center rounded-xl bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-95"
+            >
+              질문 시작하기
+            </button>
+            <button
+              type="button"
+              onClick={resetAll}
+              className="inline-flex h-11 items-center justify-center rounded-xl border border-[var(--line)] bg-white px-5 text-sm font-medium text-[var(--ink-dim)] transition hover:bg-[var(--soft-accent)]"
+            >
+              입력 초기화
+            </button>
+          </div>
+        </section>
+      ) : null}
+
+      {step === "questions" ? (
+        <section className="mt-5 space-y-4">
+          <header className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 shadow-[var(--shadow-soft)]">
+            <p className="text-xs font-semibold tracking-[0.16em] text-[var(--ink-faint)]">STEP 2 · 질문 진행</p>
+            <div className="mt-2 flex items-center justify-between text-sm text-[var(--ink-dim)]">
+              <span>
+                질문 {questionIndex + 1} / {QUESTIONS.length}
+              </span>
+              <span>{progressPercent}%</span>
+            </div>
+            <div className="mt-2 h-2 overflow-hidden rounded-full bg-[var(--soft-accent)]">
+              <div className="h-full rounded-full bg-[var(--accent)] transition-all" style={{ width: `${progressPercent}%` }} />
+            </div>
+          </header>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-5 shadow-[var(--shadow-soft)] md:p-6">
+            <div className="mb-4 flex flex-wrap gap-2 text-xs text-[var(--ink-faint)]">
+              <span className="rounded-full bg-white px-3 py-1">남자: {maleName}</span>
+              <span className="rounded-full bg-white px-3 py-1">여자: {femaleName}</span>
+              <span className="rounded-full bg-white px-3 py-1">관계 단계: {relationStage}</span>
+            </div>
+            <p className="text-xs font-semibold tracking-wide text-[var(--ink-faint)]">
+              {currentQuestion.id} · {DOMAIN_NAME[currentQuestion.domain]}
+            </p>
+            <h2 className="mt-2 text-xl font-semibold leading-snug text-[var(--ink-strong)] md:text-2xl">
+              {currentQuestion.prompt}
+            </h2>
+
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
                 남자 답변
                 <select
-                  value={answers[question.id].male ?? ""}
-                  onChange={(event) => handleValueChange(question.id, "male", event.target.value)}
+                  value={currentAnswer.male ?? ""}
+                  onChange={(event) => handleValueChange(currentQuestion.id, "male", event.target.value)}
                   className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
                 >
                   <option value="">선택하세요</option>
-                  {question.options.map((option, index) => (
-                    <option key={`${question.id}_male_${index}`} value={index}>
+                  {currentQuestion.options.map((option, index) => (
+                    <option key={`${currentQuestion.id}_male_${index}`} value={index}>
                       {index} · {option}
                     </option>
                   ))}
                 </select>
               </label>
+
               <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
                 여자 답변
                 <select
-                  value={answers[question.id].female ?? ""}
-                  onChange={(event) => handleValueChange(question.id, "female", event.target.value)}
+                  value={currentAnswer.female ?? ""}
+                  onChange={(event) => handleValueChange(currentQuestion.id, "female", event.target.value)}
                   className="h-10 rounded-lg border border-[var(--line)] bg-white px-3 text-[var(--ink)]"
                 >
                   <option value="">선택하세요</option>
-                  {question.options.map((option, index) => (
-                    <option key={`${question.id}_female_${index}`} value={index}>
+                  {currentQuestion.options.map((option, index) => (
+                    <option key={`${currentQuestion.id}_female_${index}`} value={index}>
                       {index} · {option}
                     </option>
                   ))}
                 </select>
               </label>
             </div>
+
+            {questionError ? (
+              <p className="mt-4 rounded-lg border border-[#efbfca] bg-[#fff4f6] px-3 py-2 text-sm text-[#9f4256]">
+                {questionError}
+              </p>
+            ) : null}
+
+            <div className="mt-5 flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={goToPreviousQuestion}
+                disabled={questionIndex === 0}
+                className="inline-flex h-11 items-center justify-center rounded-xl border border-[var(--line)] bg-white px-5 text-sm font-medium text-[var(--ink-dim)] transition hover:bg-[var(--soft-accent)] disabled:cursor-not-allowed disabled:opacity-55"
+              >
+                이전 질문
+              </button>
+              <button
+                type="button"
+                onClick={goToNextQuestion}
+                className="inline-flex h-11 items-center justify-center rounded-xl bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-95"
+              >
+                {questionIndex === QUESTIONS.length - 1 ? "궁합 결과 보기" : "다음 질문"}
+              </button>
+              <button
+                type="button"
+                onClick={() => setStep("basic")}
+                className="inline-flex h-11 items-center justify-center rounded-xl border border-[var(--line)] bg-white px-5 text-sm font-medium text-[var(--ink-dim)] transition hover:bg-[var(--soft-accent)]"
+              >
+                기본정보 수정
+              </button>
+            </div>
           </article>
-        ))}
-
-        <div className="flex flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={() => setSubmitted(true)}
-            disabled={!allRequiredFilled}
-            className="inline-flex h-11 items-center justify-center rounded-xl bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-55"
-          >
-            궁합 결과 보기
-          </button>
-          <button
-            type="button"
-            onClick={resetAll}
-            className="inline-flex h-11 items-center justify-center rounded-xl border border-[var(--line)] bg-white px-5 text-sm font-medium text-[var(--ink-dim)] transition hover:bg-[var(--soft-accent)]"
-          >
-            입력 초기화
-          </button>
-        </div>
-      </section>
-
-      {submitted && !allRequiredFilled ? (
-        <section className="mt-5 rounded-2xl border border-[#efbfca] bg-[#fff4f6] p-4 text-sm text-[#9f4256]">
-          필수 정보와 10개 문항의 남자/여자 답변을 모두 입력해야 결과를 확인할 수 있습니다.
         </section>
       ) : null}
 
-      {result ? (
+      {step === "result" && result ? (
         <section className="mt-5 rounded-3xl border border-[var(--line)] bg-[var(--paper)] p-5 shadow-[var(--shadow-soft)] md:p-6">
           <header className="border-b border-[var(--line)] pb-4">
             <p className="text-xs font-semibold tracking-[0.16em] text-[var(--ink-faint)]">RESULT</p>
@@ -508,6 +610,11 @@ export function CompatibilityExperience() {
               총점 <span className="font-semibold text-[var(--ink-strong)]">{result.totalScore}</span>점 · 등급{" "}
               <span className="font-semibold text-[var(--ink-strong)]">{result.grade}</span> · 유형{" "}
               <span className="font-semibold text-[var(--ink-strong)]">{result.type}</span>
+            </p>
+            <p className="mt-2 text-sm text-[var(--ink-dim)]">
+              관계 단계: {relationStage}
+              {meetingChannel ? ` · 만남 경로: ${meetingChannel}` : ""}
+              {relationshipGoal ? ` · 관계 목표: ${relationshipGoal}` : ""}
             </p>
           </header>
 
@@ -560,6 +667,30 @@ export function CompatibilityExperience() {
           <p className="mt-4 text-xs text-[var(--ink-faint)]">
             본 결과는 재미와 점검 목적의 참고 자료입니다. 실제 관계는 대화와 경험을 바탕으로 유연하게 조정해 주세요.
           </p>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={restartQuestions}
+              className="inline-flex h-11 items-center justify-center rounded-xl bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-95"
+            >
+              질문 다시 하기
+            </button>
+            <button
+              type="button"
+              onClick={() => setStep("questions")}
+              className="inline-flex h-11 items-center justify-center rounded-xl border border-[var(--line)] bg-white px-5 text-sm font-medium text-[var(--ink-dim)] transition hover:bg-[var(--soft-accent)]"
+            >
+              답변 수정하기
+            </button>
+            <button
+              type="button"
+              onClick={resetAll}
+              className="inline-flex h-11 items-center justify-center rounded-xl border border-[var(--line)] bg-white px-5 text-sm font-medium text-[var(--ink-dim)] transition hover:bg-[var(--soft-accent)]"
+            >
+              처음부터 다시
+            </button>
+          </div>
         </section>
       ) : null}
     </main>
