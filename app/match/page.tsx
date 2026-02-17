@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 
-import { ComingSoonPanel } from "@/components/ComingSoonPanel";
+import { CompatibilityExperience } from "@/components/CompatibilityExperience";
 
 export const metadata: Metadata = {
-  title: "궁합 보기",
-  description: "궁합 보기 서비스는 곧 공개됩니다.",
+  title: "궁합보기",
+  description: "남자와 여자 응답 차이로 궁합 점수와 해석을 확인해 보세요.",
 };
 
 export default function MatchPage() {
-  return (
-    <ComingSoonPanel
-      title="궁합 보기"
-      description="현재 준비 중인 기능입니다. 웨딩 박람회 데이터 품질 안정화 이후 제공됩니다."
-    />
-  );
+  return <CompatibilityExperience />;
 }
 
