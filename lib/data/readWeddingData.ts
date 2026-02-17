@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
+import { getWeddingDataKv, WEDDING_DATA_KV_KEY } from "@/lib/data/getWeddingDataKv";
 import { getNowIsoString } from "@/lib/date";
 import { REGION_FALLBACK_IMAGES, REGION_LABELS } from "@/lib/regions";
 import type { DataRegionKey, WeddingDataset, WeddingRegion } from "@/lib/types";
@@ -23,13 +24,46 @@ export function buildEmptyDataset(): WeddingDataset {
   };
 }
 
+function parseDataset(raw: string | null): WeddingDataset | null {
+  if (!raw) {
+    return null;
+  }
+
+  try {
+    const parsed = JSON.parse(raw) as WeddingDataset;
+    if (!parsed || !Array.isArray(parsed.regions)) {
+      return null;
+    }
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
 export async function readWeddingData(): Promise<WeddingDataset> {
+  const kv = await getWeddingDataKv();
+  if (kv) {
+    try {
+      const kvDataset = parseDataset(await kv.get(WEDDING_DATA_KV_KEY));
+      if (kvDataset) {
+        return kvDataset;
+      }
+    } catch {
+      // Fall back to file storage when KV reads fail.
+    }
+  }
+
   try {
     const raw = await readFile(DATA_FILE_PATH, "utf-8");
-    return JSON.parse(raw) as WeddingDataset;
+    const fileDataset = parseDataset(raw);
+    if (fileDataset) {
+      return fileDataset;
+    }
   } catch {
-    return buildEmptyDataset();
+    // Fall through to empty dataset.
   }
+
+  return buildEmptyDataset();
 }
 
 export async function findWeddingEventById(eventId: string) {

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { CpaButton } from "@/components/CpaButton";
+import { REGION_FALLBACK_IMAGES } from "@/lib/regions";
 import type { RegionKey, WeddingEvent } from "@/lib/types";
 
 interface EventCardProps {
@@ -11,9 +12,33 @@ interface EventCardProps {
 }
 
 const WHOLE_CARD_CLICK_CPA = process.env.NEXT_PUBLIC_CARD_WHOLE_CLICK_CPA === "true";
+const ALLOWED_IMAGE_HOSTS = new Set(["replyalba.com", "www.replyalba.com", "images.unsplash.com"]);
+
+function toSafeImageSrc(event: WeddingEvent): string {
+  const source = event.heroImageUrl?.trim();
+  if (!source) {
+    return REGION_FALLBACK_IMAGES[event.region];
+  }
+
+  if (source.startsWith("/")) {
+    return source;
+  }
+
+  try {
+    const parsed = new URL(source);
+    if (parsed.protocol === "https:" && ALLOWED_IMAGE_HOSTS.has(parsed.hostname)) {
+      return parsed.toString();
+    }
+  } catch {
+    // Ignore invalid image URL and use fallback.
+  }
+
+  return REGION_FALLBACK_IMAGES[event.region];
+}
 
 export function EventCard({ event, position, regionForTracking }: EventCardProps) {
   const goHref = `/go/${event.id}?region=${event.region}&position=${position}`;
+  const safeImageSrc = toSafeImageSrc(event);
 
   return (
     <article className="group relative overflow-hidden rounded-2xl border border-[var(--line)] bg-white shadow-[var(--shadow-soft)] transition hover:-translate-y-[1px] hover:shadow-lg">
@@ -23,7 +48,7 @@ export function EventCard({ event, position, regionForTracking }: EventCardProps
 
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
-          src={event.heroImageUrl}
+          src={safeImageSrc}
           alt={event.title}
           fill
           className="object-cover transition duration-300 group-hover:scale-[1.02]"

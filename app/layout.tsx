@@ -4,6 +4,7 @@ import { Noto_Sans_KR, Noto_Serif_KR } from "next/font/google";
 
 import { Footer } from "@/components/Footer";
 import { TopNav } from "@/components/TopNav";
+import { getSiteUrl } from "@/lib/site";
 import "./globals.css";
 
 const bodySans = Noto_Sans_KR({
@@ -19,7 +20,7 @@ const titleSerif = Noto_Serif_KR({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://wedding-evee.example"),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: "Wedding Evee | 웨딩박람회 일정",
     template: "%s | Wedding Evee",

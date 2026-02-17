@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 
+import { getSiteUrl } from "@/lib/site";
 import { DATA_REGION_KEYS } from "@/lib/types";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://wedding-evee.example";
+  const baseUrl = getSiteUrl();
   const today = new Date();
 
   const entries: MetadataRoute.Sitemap = [

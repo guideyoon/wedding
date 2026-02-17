@@ -28,6 +28,8 @@ async function asyncPool<T, R>(
 export async function syncWeddingData(): Promise<{
   dataset: WeddingDataset;
   eventCount: number;
+  storage: "kv" | "file" | "none";
+  wroteToStorage: boolean;
   wroteToFile: boolean;
 }> {
   const previous = await readWeddingData();
@@ -39,6 +41,8 @@ export async function syncWeddingData(): Promise<{
     return {
       dataset: previous,
       eventCount: previous.regions.reduce((sum, region) => sum + region.events.length, 0),
+      storage: "none",
+      wroteToStorage: false,
       wroteToFile: false,
     };
   }
@@ -61,16 +65,20 @@ export async function syncWeddingData(): Promise<{
   const normalized = normalizeWeddingData(previous, parsed);
 
   try {
-    await writeWeddingData(normalized);
+    const storage = await writeWeddingData(normalized);
     return {
       dataset: normalized,
       eventCount: normalized.regions.reduce((sum, region) => sum + region.events.length, 0),
-      wroteToFile: true,
+      storage,
+      wroteToStorage: true,
+      wroteToFile: storage === "file",
     };
   } catch {
     return {
       dataset: normalized,
       eventCount: normalized.regions.reduce((sum, region) => sum + region.events.length, 0),
+      storage: "none",
+      wroteToStorage: false,
       wroteToFile: false,
     };
   }

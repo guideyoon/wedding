@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 function isAuthorized(request: NextRequest): boolean {
   const secret = process.env.CRON_SECRET;
   if (!secret) {
-    return true;
+    return process.env.NODE_ENV !== "production";
   }
 
   const authHeader = request.headers.get("authorization") ?? "";
@@ -28,6 +28,8 @@ export async function GET(request: NextRequest) {
       ok: true,
       generatedAt: result.dataset.generatedAt,
       eventCount: result.eventCount,
+      storage: result.storage,
+      wroteToStorage: result.wroteToStorage,
       wroteToFile: result.wroteToFile,
     });
   } catch (error) {
