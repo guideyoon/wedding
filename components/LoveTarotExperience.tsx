@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import Image from "next/image";
 
 import { ResultShareButton } from "@/components/ResultShareButton";
 import { WeddingGuideBox } from "@/components/WeddingGuideBox";
@@ -388,6 +389,7 @@ export function LoveTarotExperience() {
   const [resultOpen, setResultOpen] = useState(false);
 
   const currentQuestion = TAROT_QUESTIONS[questionIndex];
+  const tarotQuestionImageSrc = `/images/toro/${currentQuestion.id}.webp`;
   const dominantFocus = useMemo(() => getDominantFocus(answers), [answers]);
   const focusSummary = LOVE_FOCUS_SUMMARY[dominantFocus];
   const progressPercent = Math.round(((questionIndex + 1) / TAROT_QUESTIONS.length) * 100);
@@ -485,6 +487,19 @@ export function LoveTarotExperience() {
               10가지 질문에 답하고 카드를 3장 선택하면, 현재 감정 흐름과 관계의 방향을 자세한 연애 타로 해석으로
               확인할 수 있어요.
             </p>
+
+            <div className="mt-5 rounded-2xl border border-[var(--line)] bg-white/70 p-3">
+              <div className="mx-auto max-w-[380px] overflow-hidden rounded-xl border border-[var(--line)] bg-white p-2">
+                <Image
+                  src="/images/toro/taromain.webp"
+                  alt="연애 타로 대시보드 이미지"
+                  width={1200}
+                  height={675}
+                  className="mx-auto h-auto w-full object-contain"
+                  priority
+                />
+              </div>
+            </div>
           </div>
           <div className="grid gap-4 p-6 md:grid-cols-3 md:p-8">
             <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
@@ -526,6 +541,18 @@ export function LoveTarotExperience() {
             </div>
             <div className="h-2 overflow-hidden rounded-full bg-[var(--soft-accent)]">
               <div className="h-full rounded-full bg-[var(--accent)] transition-all" style={{ width: `${progressPercent}%` }} />
+            </div>
+
+            <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white/70 p-3">
+              <div className="mx-auto max-w-[360px] overflow-hidden rounded-xl border border-[var(--line)] bg-white p-2">
+                <Image
+                  src={tarotQuestionImageSrc}
+                  alt={`연애 타로 질문 ${currentQuestion.id} 이미지`}
+                  width={1200}
+                  height={675}
+                  className="mx-auto h-auto w-full object-contain"
+                />
+              </div>
             </div>
           </div>
 

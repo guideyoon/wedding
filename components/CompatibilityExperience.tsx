@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 
 import { ResultShareButton } from "@/components/ResultShareButton";
 import { WeddingGuideBox } from "@/components/WeddingGuideBox";
@@ -280,6 +281,7 @@ export function CompatibilityExperience() {
 
   const currentQuestion = QUESTIONS[questionIndex];
   const currentAnswer = answers[currentQuestion.id];
+  const compatibilityQuestionImageSrc = `/images/gh/${questionIndex + 1}.webp`;
   const progressPercent = Math.round(((questionIndex + 1) / QUESTIONS.length) * 100);
 
   const basicInfoValid =
@@ -391,6 +393,20 @@ export function CompatibilityExperience() {
           <p className="mt-2 text-sm text-[var(--ink-dim)]">
             먼저 필수 기본정보를 입력한 뒤, 질문을 한 문항씩 진행합니다.
           </p>
+
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white/70 p-3">
+            <div className="mx-auto max-w-[380px] overflow-hidden rounded-xl border border-[var(--line)] bg-white p-2">
+              <Image
+                src="/images/gh/ghmain.webp"
+                alt="궁합보기 대시보드 이미지"
+                width={1200}
+                height={675}
+                className="mx-auto h-auto w-full object-contain"
+                priority
+              />
+            </div>
+          </div>
+
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             <label className="grid gap-1 text-sm text-[var(--ink-dim)]">
               남자 이름 (필수)
@@ -518,6 +534,18 @@ export function CompatibilityExperience() {
             </div>
             <div className="mt-2 h-2 overflow-hidden rounded-full bg-[var(--soft-accent)]">
               <div className="h-full rounded-full bg-[var(--accent)] transition-all" style={{ width: `${progressPercent}%` }} />
+            </div>
+
+            <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white/70 p-3">
+              <div className="mx-auto max-w-[360px] overflow-hidden rounded-xl border border-[var(--line)] bg-white p-2">
+                <Image
+                  src={compatibilityQuestionImageSrc}
+                  alt={`궁합보기 질문 ${questionIndex + 1} 이미지`}
+                  width={1200}
+                  height={675}
+                  className="mx-auto h-auto w-full object-contain"
+                />
+              </div>
             </div>
           </header>
 
