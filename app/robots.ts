@@ -6,12 +6,18 @@ export default function robots(): MetadataRoute.Robots {
   const siteUrl = getSiteUrl();
 
   return {
-    rules: {
-      userAgent: "*",
-      allow: ["/", "/wedding", "/wedding/*", "/tarot", "/match", "/tips", "/privacy", "/terms"],
-      disallow: ["/api/", "/go/"],
-    },
-    sitemap: `${siteUrl}/sitemap.xml`,
+    rules: [
+      {
+        userAgent: "Yeti",
+        allow: "/",
+      },
+      {
+        userAgent: "*",
+        allow: ["/", "/wedding", "/wedding/*", "/tarot", "/match", "/tips", "/privacy", "/terms"],
+        disallow: ["/api/", "/go/"],
+      },
+    ],
+    sitemap: [`${siteUrl}/sitemap.xml`, `${siteUrl}/rss.xml`],
   };
 }
 

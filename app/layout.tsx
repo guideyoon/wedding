@@ -31,6 +31,9 @@ export default function RootLayout({
 
   return (
     <html lang="ko">
+      <head>
+        <meta name="naver-site-verification" content="78ff458b24dc66dd833f1406a14516ec338455f0" />
+      </head>
       <body className="bg-[var(--bg)] text-[var(--ink)] antialiased">
         <TopNav />
         {children}
