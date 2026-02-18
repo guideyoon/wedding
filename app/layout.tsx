@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     template: "%s | Wedding damoa",
   },
   description: "전국 웨딩박람회 일정과 무료초대권 신청 링크를 지역별로 빠르게 확인하세요.",
+  verification: {
+    other: {
+      "naver-site-verification": "78ff458b24dc66dd833f1406a14516ec338455f0",
+    },
+  },
 };
 
 export default function RootLayout({
