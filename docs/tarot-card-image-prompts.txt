@@ -1,0 +1,85 @@
+연애타로 실제 카드 이미지 제작 가이드
+
+목표
+- 현재 코드에서 실제로 사용하는 카드 15장을 동일한 아트 스타일로 생성한다.
+- 파일명은 카드 id 기준으로 정렬 가능한 숫자 네이밍을 사용한다.
+
+권장 파일 경로/이름
+- public/images/tarot-cards/1.webp
+- public/images/tarot-cards/2.webp
+- ...
+- public/images/tarot-cards/15.webp
+
+공통 스타일 프롬프트 템플릿
+- "Vertical tarot card illustration, ornate border frame, romantic mystic mood, deep purple and indigo palette with gold accents, clean central symbolism, soft volumetric light, subtle grain, high detail, no text, no watermark, no logo, centered composition, 2:3 aspect ratio"
+
+네거티브 프롬프트(공통)
+- "text, letters, logo, watermark, signature, blurry, low quality, deformed hands, extra fingers, cropped card, duplicate frame, harsh neon"
+
+생성 대상 카드 목록 + 카드별 프롬프트
+
+1) id=1, 카드명=연인, 키테마=진심의 일치
+프롬프트:
+"Tarot card 'The Lovers' reinterpretation for relationship reading, two figures facing each other with a luminous heart-shaped aura connecting them, balanced symmetry, gentle dawn sky, emotional harmony, ornate golden frame, deep purple background, no text"
+
+2) id=2, 카드명=태양, 키테마=밝은 확신
+프롬프트:
+"Tarot card 'The Sun' reinterpretation, radiant sun disc above a calm path, warm golden rays breaking through indigo clouds, clarity and confidence, elegant decorative border, mystical romantic style, no text"
+
+3) id=3, 카드명=별, 키테마=회복과 희망
+프롬프트:
+"Tarot card 'The Star' reinterpretation, serene night scene with a central bright star reflecting on still water, healing atmosphere, soft silver sparkles, purple-blue gradient sky, ornate frame, no text"
+
+4) id=4, 카드명=컵 2, 키테마=감정 교류
+프롬프트:
+"Tarot card 'Two of Cups' reinterpretation, two ornate chalices exchanging flowing light between them, mutual affection symbolism, romantic mystical atmosphere, gold filigree border, deep violet palette, no text"
+
+5) id=5, 카드명=완드 기사, 키테마=강한 끌림
+프롬프트:
+"Tarot card 'Knight of Wands' reinterpretation, dynamic rider silhouette carrying a glowing wand, forward motion and passion, wind-swept cloak, ember sparks, dramatic purple dusk, ornate card border, no text"
+
+6) id=6, 카드명=황제, 키테마=관계의 구조
+프롬프트:
+"Tarot card 'The Emperor' reinterpretation, regal seated figure on geometric throne, stone pillars and stable architecture, authority and structure, deep indigo shadows with gold highlights, ornate frame, no text"
+
+7) id=7, 카드명=여황제, 키테마=정서적 풍요
+프롬프트:
+"Tarot card 'The Empress' reinterpretation, nurturing queen figure amid blooming garden, flowing fabric and soft moonlight, abundance and warmth, romantic purple-gold style, decorative border, no text"
+
+8) id=8, 카드명=정의, 키테마=균형과 합의
+프롬프트:
+"Tarot card 'Justice' reinterpretation, balanced scales glowing at center with a calm upright sword, symmetry and fairness symbolism, clean composition, deep violet backdrop, elegant gold frame, no text"
+
+9) id=9, 카드명=은둔자, 키테마=내면 점검
+프롬프트:
+"Tarot card 'The Hermit' reinterpretation, solitary figure holding a lantern on a quiet ridge, introspective atmosphere, soft fog and moonlit sky, restrained purple palette, ornate border, no text"
+
+10) id=10, 카드명=달, 키테마=불안과 오해
+프롬프트:
+"Tarot card 'The Moon' reinterpretation, large moon above reflective water and winding path, dual silhouettes hinting uncertainty, dreamy haze, indigo-purple tones with silver glow, ornate frame, no text"
+
+11) id=11, 카드명=운명의 수레바퀴, 키테마=전환점
+프롬프트:
+"Tarot card 'Wheel of Fortune' reinterpretation, luminous rotating wheel with zodiac-like symbols, sense of turning fate, dramatic radial light, rich purple backdrop, gold ornamental border, no text"
+
+12) id=12, 카드명=힘, 키테마=성숙한 인내
+프롬프트:
+"Tarot card 'Strength' reinterpretation, calm figure gently taming a lion made of starlight, compassion over force, controlled energy, romantic mystic purple-gold palette, ornate frame, no text"
+
+13) id=13, 카드명=매달린 사람, 키테마=관점 전환
+프롬프트:
+"Tarot card 'The Hanged Man' reinterpretation, upside-down suspended figure with halo-like glow, peaceful expression, perspective shift symbolism, moody indigo atmosphere, decorative golden border, no text"
+
+14) id=14, 카드명=죽음, 키테마=정리와 재시작
+프롬프트:
+"Tarot card 'Death' reinterpretation, symbolic transition scene with falling petals transforming into new sprouts, end-to-beginning narrative, dramatic light split, deep violet and gold accents, ornate frame, no text"
+
+15) id=15, 카드명=컵 10, 키테마=정서적 완성
+프롬프트:
+"Tarot card 'Ten of Cups' reinterpretation, ten glowing cups forming an arc above a peaceful couple silhouette, emotional fulfillment and harmony, warm twilight in purple-gold palette, ornate border, no text"
+
+체크리스트
+- 모든 카드 비율 통일: 2:3
+- 카드 외곽 프레임 두께/색 통일
+- 인물 크기와 시점 일관성 유지
+- 텍스트 삽입 금지(카드명은 앱에서 표시)
