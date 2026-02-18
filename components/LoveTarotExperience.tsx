@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
 
 import { ResultShareButton } from "@/components/ResultShareButton";
@@ -380,6 +380,7 @@ export function LoveTarotExperience() {
   const [deck, setDeck] = useState<TarotCard[]>(TAROT_CARDS);
   const [selectedCardIds, setSelectedCardIds] = useState<number[]>([]);
   const [resultOpen, setResultOpen] = useState(false);
+  const questionSectionRef = useRef<HTMLElement | null>(null);
 
   const currentQuestion = TAROT_QUESTIONS[questionIndex];
   const tarotQuestionImageSrc = getTarotQuestionImageSrc(questionIndex + 1);
@@ -421,6 +422,39 @@ export function LoveTarotExperience() {
       window.clearTimeout(done);
     };
   }, [phase]);
+
+  useEffect(() => {
+    if (phase !== "questions") {
+      return;
+    }
+
+    if (questionIndex < 0) {
+      return;
+    }
+
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    if (!isMobile || !questionSectionRef.current) {
+      return;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      const top = questionSectionRef.current?.getBoundingClientRect().top ?? 0;
+      const absoluteTop = window.scrollY + top;
+      const navOffset = 72;
+      window.scrollTo({
+        top: Math.max(absoluteTop - navOffset, 0),
+        behavior: "smooth",
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, [phase, questionIndex]);
 
   const startQuestionFlow = () => {
     setPhase("questions");
@@ -524,7 +558,7 @@ export function LoveTarotExperience() {
       ) : null}
 
       {phase === "questions" ? (
-        <section className="space-y-4">
+        <section ref={questionSectionRef} className="space-y-4">
           <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 shadow-[var(--shadow-soft)]">
             <div className="mb-2 flex items-center justify-between text-xs text-[var(--ink-faint)]">
               <span>

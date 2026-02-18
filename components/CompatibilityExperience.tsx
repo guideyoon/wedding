@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 
 import { ResultShareButton } from "@/components/ResultShareButton";
@@ -278,6 +278,7 @@ export function CompatibilityExperience() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [basicInfoError, setBasicInfoError] = useState<string | null>(null);
   const [questionError, setQuestionError] = useState<string | null>(null);
+  const questionSectionRef = useRef<HTMLElement | null>(null);
 
   const currentQuestion = QUESTIONS[questionIndex];
   const currentAnswer = answers[currentQuestion.id];
@@ -376,6 +377,39 @@ export function CompatibilityExperience() {
     setBasicInfoError(null);
     setQuestionError(null);
   };
+
+  useEffect(() => {
+    if (step !== "questions") {
+      return;
+    }
+
+    if (questionIndex < 0) {
+      return;
+    }
+
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    if (!isMobile || !questionSectionRef.current) {
+      return;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      const top = questionSectionRef.current?.getBoundingClientRect().top ?? 0;
+      const absoluteTop = window.scrollY + top;
+      const navOffset = 72;
+      window.scrollTo({
+        top: Math.max(absoluteTop - navOffset, 0),
+        behavior: "smooth",
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, [step, questionIndex]);
 
   return (
     <main className="mx-auto w-full max-w-[1100px] px-4 py-8 md:px-6 md:py-10">
@@ -523,7 +557,7 @@ export function CompatibilityExperience() {
       ) : null}
 
       {step === "questions" ? (
-        <section className="mt-5 space-y-4">
+        <section ref={questionSectionRef} className="mt-5 space-y-4">
           <header className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 shadow-[var(--shadow-soft)]">
             <p className="text-xs font-semibold tracking-[0.16em] text-[var(--ink-faint)]">STEP 2 · 질문 진행</p>
             <div className="mt-2 flex items-center justify-between text-sm text-[var(--ink-dim)]">
