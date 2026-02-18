@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 const NAV_ITEMS = [
-  { href: "/wedding", label: "웨딩 박람회", released: true },
+  { href: "/wedding", label: "2026 웨딩박람회", released: true },
   { href: "/tips", label: "웨딩 준비 꿀팁", released: true },
   { href: "/tarot", label: "연애 타로", released: true },
   { href: "/match", label: "궁합보기", released: true },
