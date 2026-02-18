@@ -394,8 +394,8 @@ export function CompatibilityExperience() {
             먼저 필수 기본정보를 입력한 뒤, 질문을 한 문항씩 진행합니다.
           </p>
 
-          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white/70 p-3">
-            <div className="mx-auto max-w-[380px] overflow-hidden rounded-xl border border-[var(--line)] bg-white p-2">
+          <div className="mt-4 rounded-2xl bg-white/70 p-3">
+            <div className="mx-auto max-w-[380px] overflow-hidden rounded-xl bg-white p-2">
               <Image
                 src="/images/gh/ghmain.webp"
                 alt="궁합보기 대시보드 이미지"
@@ -536,8 +536,8 @@ export function CompatibilityExperience() {
               <div className="h-full rounded-full bg-[var(--accent)] transition-all" style={{ width: `${progressPercent}%` }} />
             </div>
 
-            <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white/70 p-3">
-              <div className="mx-auto max-w-[360px] overflow-hidden rounded-xl border border-[var(--line)] bg-white p-2">
+            <div className="mt-3 rounded-2xl bg-white/70 p-3">
+              <div className="mx-auto max-w-[360px] overflow-hidden rounded-xl bg-white p-2">
                 <Image
                   src={compatibilityQuestionImageSrc}
                   alt={`궁합보기 질문 ${questionIndex + 1} 이미지`}

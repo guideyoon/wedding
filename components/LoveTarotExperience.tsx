@@ -481,18 +481,18 @@ export function LoveTarotExperience() {
           <div className="border-b border-[var(--line)] bg-[linear-gradient(120deg,rgba(184,141,216,0.17),rgba(255,255,255,0.2))] p-6 md:p-8">
             <p className="text-xs font-semibold tracking-[0.18em] text-[var(--ink-faint)]">LOVE TAROT</p>
             <h1 className="mt-3 text-3xl font-semibold leading-tight text-[var(--ink-strong)] md:text-4xl">
-              연애 타로 리딩
+              연애타로 리딩
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--ink-dim)] md:text-base">
-              10가지 질문에 답하고 카드를 3장 선택하면, 현재 감정 흐름과 관계의 방향을 자세한 연애 타로 해석으로
+              10가지 질문에 답하고 카드를 3장 선택하면, 현재 감정 흐름과 관계의 방향을 자세한 연애타로 해석으로
               확인할 수 있어요.
             </p>
 
-            <div className="mt-5 rounded-2xl border border-[var(--line)] bg-white/70 p-3">
-              <div className="mx-auto max-w-[380px] overflow-hidden rounded-xl border border-[var(--line)] bg-white p-2">
+            <div className="mt-5 rounded-2xl bg-white/70 p-3">
+              <div className="mx-auto max-w-[380px] overflow-hidden rounded-xl bg-white p-2">
                 <Image
                   src="/images/toro/taromain.webp"
-                  alt="연애 타로 대시보드 이미지"
+                  alt="연애타로 대시보드 이미지"
                   width={1200}
                   height={675}
                   className="mx-auto h-auto w-full object-contain"
@@ -543,11 +543,11 @@ export function LoveTarotExperience() {
               <div className="h-full rounded-full bg-[var(--accent)] transition-all" style={{ width: `${progressPercent}%` }} />
             </div>
 
-            <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white/70 p-3">
-              <div className="mx-auto max-w-[360px] overflow-hidden rounded-xl border border-[var(--line)] bg-white p-2">
+            <div className="mt-3 rounded-2xl bg-white/70 p-3">
+              <div className="mx-auto max-w-[360px] overflow-hidden rounded-xl bg-white p-2">
                 <Image
                   src={tarotQuestionImageSrc}
-                  alt={`연애 타로 질문 ${currentQuestion.id} 이미지`}
+                  alt={`연애타로 질문 ${currentQuestion.id} 이미지`}
                   width={1200}
                   height={675}
                   className="mx-auto h-auto w-full object-contain"
@@ -734,8 +734,8 @@ export function LoveTarotExperience() {
             </div>
 
             <ResultShareButton
-              title="연애 타로 결과"
-              text="연애 타로 테스트 결과를 확인해 보세요."
+              title="연애타로 결과"
+              text="연애타로 테스트 결과를 확인해 보세요."
               className="mt-4"
             />
           </section>
