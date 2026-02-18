@@ -328,6 +328,10 @@ function getTarotCardImageSrc(cardId: number): string {
   return `/images/tarocard/${cardId}.webp`;
 }
 
+function getTarotQuestionImageSrc(questionStep: number): string {
+  return `/images/toro/${questionStep}.webp`;
+}
+
 function TarotCardBack({ index }: TarotCardBackProps) {
   const cardLabel = `CARD ${String(index + 1).padStart(2, "0")}`;
 
@@ -378,7 +382,7 @@ export function LoveTarotExperience() {
   const [resultOpen, setResultOpen] = useState(false);
 
   const currentQuestion = TAROT_QUESTIONS[questionIndex];
-  const tarotQuestionImageSrc = getTarotCardImageSrc(currentQuestion.id);
+  const tarotQuestionImageSrc = getTarotQuestionImageSrc(questionIndex + 1);
   const dominantFocus = useMemo(() => getDominantFocus(answers), [answers]);
   const focusSummary = LOVE_FOCUS_SUMMARY[dominantFocus];
   const progressPercent = Math.round(((questionIndex + 1) / TAROT_QUESTIONS.length) * 100);
@@ -617,26 +621,33 @@ export function LoveTarotExperience() {
                   type="button"
                   onClick={() => selectCard(card.id)}
                   disabled={disabled}
-                  className={`group relative aspect-[2/3] rounded-xl border p-2 text-left transition ${
+                  className={`group relative aspect-[2/3] rounded-xl border text-left transition ${
                     selected
-                      ? "border-[var(--accent)] bg-white shadow-[var(--shadow-soft)]"
-                      : "border-[var(--line)] bg-transparent hover:-translate-y-0.5 hover:border-[var(--accent)]"
+                      ? "overflow-hidden border-[var(--accent)] bg-white shadow-[var(--shadow-soft)]"
+                      : "border-[var(--line)] bg-transparent p-2 hover:-translate-y-0.5 hover:border-[var(--accent)]"
                   } ${disabled ? "cursor-not-allowed opacity-60" : ""}`}
                 >
                   {selected ? (
-                    <div className="flex h-full flex-col">
-                      <div className="relative flex-1 overflow-hidden rounded-[0.65rem]">
-                        <Image
-                          src={getTarotCardImageSrc(card.id)}
-                          alt={`${card.name} 카드 이미지`}
-                          fill
-                          sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                          className="object-cover"
-                        />
+                    <div className="relative h-full overflow-hidden rounded-[0.65rem]">
+                      <Image
+                        src={getTarotCardImageSrc(card.id)}
+                        alt={`${card.name} 카드 이미지`}
+                        fill
+                        sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,6,14,0.1)_30%,rgba(9,6,14,0.9)_100%)]" />
+                      <p className="absolute left-2 top-2 rounded-full bg-[rgba(0,0,0,0.55)] px-2 py-1 text-[11px] font-semibold text-white">
+                        {selectedOrder + 1}번째 선택
+                      </p>
+                      <div className="absolute inset-x-0 bottom-0 p-2">
+                        <h3 className="text-sm font-semibold text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.75)]">
+                          {card.name}
+                        </h3>
+                        <p className="mt-1 text-[11px] leading-4 text-[rgba(255,255,255,0.9)] [text-shadow:0_1px_5px_rgba(0,0,0,0.75)]">
+                          {card.keyTheme}
+                        </p>
                       </div>
-                      <p className="mt-2 text-xs font-semibold text-[var(--ink-faint)]">{selectedOrder + 1}번째 선택</p>
-                      <h3 className="mt-1 text-base font-semibold text-[var(--ink-strong)]">{card.name}</h3>
-                      <p className="mt-1 text-xs leading-5 text-[var(--ink-dim)]">{card.keyTheme}</p>
                     </div>
                   ) : (
                     <TarotCardBack index={index} />
