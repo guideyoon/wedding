@@ -584,7 +584,7 @@ export function LoveTarotExperience() {
           </div>
 
           <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-5 shadow-[var(--shadow-soft)] md:p-6">
-            <div className="mb-4 rounded-2xl border border-[var(--line)] bg-[linear-gradient(140deg,rgba(184,141,216,0.2),rgba(255,255,255,0.2))] p-4">
+            <div className="mb-4 hidden rounded-2xl border border-[var(--line)] bg-[linear-gradient(140deg,rgba(184,141,216,0.2),rgba(255,255,255,0.2))] p-4 md:block">
               <p className="text-xs font-semibold tracking-wide text-[var(--ink-faint)]">삽화</p>
               <p className="mt-2 text-sm text-[var(--ink-dim)]">{currentQuestion.illustration}</p>
             </div>
