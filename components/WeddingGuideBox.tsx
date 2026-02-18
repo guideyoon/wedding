@@ -11,6 +11,10 @@ interface WeddingGuideBoxProps {
   source: "tarot_result" | "compatibility_result";
 }
 
+interface ConversionWindow extends Window {
+  gtag_report_conversion?: (url?: string) => boolean;
+}
+
 function toWeddingRegionHref(region: RegionKey): string {
   return region === "all" ? "/wedding#region-list-heading" : `/wedding/${region}#region-list-heading`;
 }
@@ -24,8 +28,18 @@ export function WeddingGuideBox({ source }: WeddingGuideBoxProps) {
       return;
     }
 
+    const targetHref = toWeddingRegionHref(region);
     trackClickWeddingGuide(region, source);
-    router.push(toWeddingRegionHref(region), { scroll: true });
+
+    if (typeof window !== "undefined") {
+      const conversionWindow = window as ConversionWindow;
+      if (typeof conversionWindow.gtag_report_conversion === "function") {
+        conversionWindow.gtag_report_conversion(targetHref);
+        return;
+      }
+    }
+
+    router.push(targetHref, { scroll: true });
   };
 
   return (

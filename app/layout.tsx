@@ -34,6 +34,10 @@ export default function RootLayout({
     process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? process.env.GA_MEASUREMENT_ID ?? "";
   const googleAdsTagId =
     process.env.NEXT_PUBLIC_GOOGLE_ADS_TAG_ID ?? process.env.GOOGLE_ADS_TAG_ID ?? "AW-17961127245";
+  const googleAdsConversionLabel =
+    process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL ??
+    process.env.GOOGLE_ADS_CONVERSION_LABEL ??
+    "AW-17961127245/uaa-CIuO1vobEM2axPRC";
   const primaryGoogleTagId = gaMeasurementId || googleAdsTagId;
   const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? process.env.META_PIXEL_ID ?? "";
 
@@ -56,7 +60,27 @@ function gtag(){dataLayer.push(arguments);}
 window.gtag = gtag;
 gtag('js', new Date());
 ${gaMeasurementId ? `gtag('config', '${gaMeasurementId}');` : ""}
-gtag('config', '${googleAdsTagId}');`}
+gtag('config', '${googleAdsTagId}');
+window.gtag_report_conversion = function(url) {
+  var completed = false;
+  var callback = function () {
+    if (completed) {
+      return;
+    }
+    completed = true;
+    if (typeof(url) !== 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+    'send_to': '${googleAdsConversionLabel}',
+    'value': 1.0,
+    'currency': 'KRW',
+    'event_callback': callback
+  });
+  window.setTimeout(callback, 1000);
+  return false;
+};`}
           </Script>
         </>
       ) : null}
