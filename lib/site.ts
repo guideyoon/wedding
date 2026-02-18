@@ -1,4 +1,8 @@
-const FALLBACK_SITE_URL = "https://wedding-damoa.example";
+const FALLBACK_SITE_URL = "http://localhost:3000";
+
+function withProtocol(candidate: string): string {
+  return /^https?:\/\//i.test(candidate) ? candidate : `https://${candidate}`;
+}
 
 function normalizeSiteUrl(candidate: string): string {
   try {
@@ -12,9 +16,16 @@ function normalizeSiteUrl(candidate: string): string {
 }
 
 export function getSiteUrl(): string {
-  const configured = process.env.NEXT_PUBLIC_SITE_URL ?? process.env.SITE_URL;
+  const configured = [
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.SITE_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL,
+    process.env.VERCEL_URL,
+  ].find((value): value is string => Boolean(value && value.trim().length > 0));
+
   if (!configured) {
     return FALLBACK_SITE_URL;
   }
-  return normalizeSiteUrl(configured);
+
+  return normalizeSiteUrl(withProtocol(configured.trim()));
 }
