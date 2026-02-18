@@ -1,10 +1,27 @@
 import type { Metadata } from "next";
 
 import { CompatibilityExperience } from "@/components/CompatibilityExperience";
+import { getSiteUrl } from "@/lib/site";
+
+const MATCH_PAGE_URL = `${getSiteUrl()}/match`;
 
 export const metadata: Metadata = {
   title: "궁합보기",
   description: "남자와 여자 응답 차이로 궁합 점수와 해석을 확인해 보세요.",
+  alternates: {
+    canonical: MATCH_PAGE_URL,
+  },
+  openGraph: {
+    title: "궁합보기",
+    description: "남자와 여자 응답 차이로 궁합 점수와 해석을 확인해 보세요.",
+    url: MATCH_PAGE_URL,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "궁합보기",
+    description: "남자와 여자 응답 차이로 궁합 점수와 해석을 확인해 보세요.",
+  },
 };
 
 export default function MatchPage() {

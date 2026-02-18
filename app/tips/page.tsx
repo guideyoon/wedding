@@ -73,20 +73,28 @@ const faqStructuredData = {
   })),
 };
 
+const TIPS_PAGE_URL = `${getSiteUrl()}/tips`;
+
 export const metadata: Metadata = {
   title: "웨딩 준비 꿀팁 Q&A",
   description:
     "2026 웨딩박람회 무료초대권, 서울 웨딩박람회 무료 신청, 웨딩박람회 초대장 받는 법, 결혼 준비 체크리스트까지 한 번에 확인하세요.",
   keywords: [...SEO_KEYWORD_TERMS],
   alternates: {
-    canonical: `${getSiteUrl()}/tips`,
+    canonical: TIPS_PAGE_URL,
   },
   openGraph: {
     title: "웨딩 준비 꿀팁 Q&A",
     description:
       "웨딩박람회 가기 전 준비물, 웨딩박람회 호구 안 되는 법, 2026 웨딩박람회 혜택까지 실전 Q&A로 정리했습니다.",
-    url: `${getSiteUrl()}/tips`,
+    url: TIPS_PAGE_URL,
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "웨딩 준비 꿀팁 Q&A",
+    description:
+      "웨딩박람회 가기 전 준비물, 웨딩박람회 호구 안 되는 법, 2026 웨딩박람회 혜택까지 실전 Q&A로 정리했습니다.",
   },
 };
 
