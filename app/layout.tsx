@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     template: "%s | Wedding damoa",
   },
   description: "전국 웨딩박람회 일정과 무료초대권 신청 링크를 지역별로 빠르게 확인하세요.",
+  icons: {
+    icon: "/images/pv.webp",
+    shortcut: "/images/pv.webp",
+    apple: "/images/pv.webp",
+  },
   verification: {
     other: {
       "naver-site-verification": "78ff458b24dc66dd833f1406a14516ec338455f0",
@@ -27,6 +32,9 @@ export default function RootLayout({
 }>) {
   const gaMeasurementId =
     process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? process.env.GA_MEASUREMENT_ID ?? "";
+  const googleAdsTagId =
+    process.env.NEXT_PUBLIC_GOOGLE_ADS_TAG_ID ?? process.env.GOOGLE_ADS_TAG_ID ?? "AW-17961127245";
+  const primaryGoogleTagId = gaMeasurementId || googleAdsTagId;
   const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? process.env.META_PIXEL_ID ?? "";
 
   return (
@@ -39,15 +47,16 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
-      {gaMeasurementId ? (
+      {primaryGoogleTagId ? (
         <>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`} strategy="afterInteractive" />
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${primaryGoogleTagId}`} strategy="afterInteractive" />
           <Script id="ga-init" strategy="afterInteractive">
             {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 window.gtag = gtag;
 gtag('js', new Date());
-gtag('config', '${gaMeasurementId}');`}
+${gaMeasurementId ? `gtag('config', '${gaMeasurementId}');` : ""}
+gtag('config', '${googleAdsTagId}');`}
           </Script>
         </>
       ) : null}
