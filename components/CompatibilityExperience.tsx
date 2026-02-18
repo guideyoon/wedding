@@ -90,8 +90,8 @@ const QUESTIONS: Question[] = [
   {
     id: "Q10",
     domain: "values",
-    prompt: "다음 단계 논의 속도 선호가 무엇입니까",
-    options: ["천천히 자연 진행", "시기 맞으면 논의 가능", "빠르게 방향 합의"],
+    prompt: "관계 속도 성향은?",
+    options: ["천천히 자연스럽게 진행", "분위기에 따라", "상대방이 먼저 해주길 원함"],
   },
 ];
 
