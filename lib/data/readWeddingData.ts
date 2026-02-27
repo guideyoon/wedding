@@ -48,6 +48,15 @@ function countEvents(dataset: WeddingDataset | null): number {
   return dataset.regions.reduce((sum, region) => sum + region.events.length, 0);
 }
 
+function getGeneratedAtMs(dataset: WeddingDataset | null): number {
+  if (!dataset?.generatedAt) {
+    return 0;
+  }
+
+  const timestamp = Date.parse(dataset.generatedAt);
+  return Number.isNaN(timestamp) ? 0 : timestamp;
+}
+
 const SEEDED_DATASET = seedWeddingDataset as WeddingDataset;
 const SEEDED_DATASET_EVENT_COUNT = countEvents(SEEDED_DATASET);
 
@@ -70,24 +79,38 @@ export async function readWeddingData(): Promise<WeddingDataset> {
     // Fall through to empty dataset.
   }
 
-  const kvCount = countEvents(kvDataset);
-  const fileCount = countEvents(fileDataset);
-  const seededCount = SEEDED_DATASET_EVENT_COUNT;
+  const candidates: Array<{ dataset: WeddingDataset; eventCount: number; generatedAtMs: number }> = [];
 
-  if (kvDataset && kvCount > 0 && kvCount >= fileCount && kvCount >= seededCount) {
-    return kvDataset;
-  }
-  if (fileDataset && fileCount > 0 && fileCount >= seededCount) {
-    return fileDataset;
-  }
-  if (seededCount > 0) {
-    return SEEDED_DATASET;
-  }
-  if (kvDataset && kvCount >= fileCount) {
-    return kvDataset;
+  if (kvDataset) {
+    candidates.push({
+      dataset: kvDataset,
+      eventCount: countEvents(kvDataset),
+      generatedAtMs: getGeneratedAtMs(kvDataset),
+    });
   }
   if (fileDataset) {
-    return fileDataset;
+    candidates.push({
+      dataset: fileDataset,
+      eventCount: countEvents(fileDataset),
+      generatedAtMs: getGeneratedAtMs(fileDataset),
+    });
+  }
+  candidates.push({
+    dataset: SEEDED_DATASET,
+    eventCount: SEEDED_DATASET_EVENT_COUNT,
+    generatedAtMs: getGeneratedAtMs(SEEDED_DATASET),
+  });
+
+  const withEvents = candidates
+    .filter((candidate) => candidate.eventCount > 0)
+    .sort((a, b) => b.generatedAtMs - a.generatedAtMs || b.eventCount - a.eventCount);
+  if (withEvents.length > 0) {
+    return withEvents[0].dataset;
+  }
+
+  const newest = [...candidates].sort((a, b) => b.generatedAtMs - a.generatedAtMs)[0];
+  if (newest) {
+    return newest.dataset;
   }
 
   return buildEmptyDataset();
