@@ -2,7 +2,7 @@ name: Sync Wedding Data
 
 on:
   schedule:
-    - cron: "0 18 * * *" # Daily at 03:00 KST (18:00 UTC)
+    - cron: "0 * * * *" # Hourly sync
   workflow_dispatch:
 
 jobs:
@@ -25,3 +25,75 @@ jobs:
           cat response.json
           echo "HTTP status: $code"
           test "$code" = "200"
+
+      - name: Validate CPA coverage
+        id: validate_cpa
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('node:fs');
+          const response = JSON.parse(fs.readFileSync('response.json', 'utf8'));
+
+          if (!response.ok) {
+            console.error('Sync API returned failure payload.');
+            process.exit(1);
+          }
+
+          const cpa = response.cpa ?? {};
+          const total = Number(cpa.total ?? 0);
+          const withCpa = Number(cpa.withCpa ?? 0);
+          const missing = Number(cpa.missing ?? 0);
+
+          console.log(`CPA coverage: ${withCpa}/${total} (missing: ${missing})`);
+
+          if (missing > 0) {
+            console.error('Detected missing CPA mappings.');
+            if (Array.isArray(cpa.missingByRegion)) {
+              for (const item of cpa.missingByRegion) {
+                if ((item.missing ?? 0) > 0) {
+                  console.error(`- ${item.region}: ${item.missing}/${item.total}`);
+                }
+              }
+            }
+            process.exit(2);
+          }
+          NODE
+
+      - name: Notify alert webhook on failure
+        if: failure() && secrets.CPA_ALERT_WEBHOOK_URL != ''
+        env:
+          CPA_ALERT_WEBHOOK_URL: ${{ secrets.CPA_ALERT_WEBHOOK_URL }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          import urllib.request
+
+          webhook = os.environ.get("CPA_ALERT_WEBHOOK_URL", "").strip()
+          if not webhook:
+              raise SystemExit(0)
+
+          body = ""
+          try:
+              with open("response.json", "r", encoding="utf-8") as f:
+                  body = f.read()
+          except Exception:
+              body = "{\"ok\":false,\"message\":\"No response.json\"}"
+
+          payload = {
+              "text": "[Wedding Sync Alert] 자동 동기화에서 CPA 누락 또는 실패가 감지되었습니다.",
+              "workflow": os.environ.get("GITHUB_WORKFLOW", ""),
+              "run_id": os.environ.get("GITHUB_RUN_ID", ""),
+              "run_url": f"https://github.com/{os.environ.get('GITHUB_REPOSITORY','')}/actions/runs/{os.environ.get('GITHUB_RUN_ID','')}",
+              "response": body[:4000],
+          }
+
+          req = urllib.request.Request(
+              webhook,
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json"},
+              method="POST",
+          )
+          urllib.request.urlopen(req, timeout=10).read()
+          PY

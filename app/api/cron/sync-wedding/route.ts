@@ -1,8 +1,37 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 import { syncWeddingData } from "@/lib/syncWeddingData";
+import type { WeddingDataset } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
+
+function buildCpaCoverage(dataset: WeddingDataset) {
+  const missingByRegion = dataset.regions.map((region) => {
+    const total = region.events.length;
+    const withCpa = region.events.filter((event) => Boolean(event.cpaUrl?.trim())).length;
+    return {
+      region: region.key,
+      total,
+      withCpa,
+      missing: total - withCpa,
+    };
+  });
+
+  const totals = missingByRegion.reduce(
+    (acc, item) => {
+      acc.total += item.total;
+      acc.withCpa += item.withCpa;
+      acc.missing += item.missing;
+      return acc;
+    },
+    { total: 0, withCpa: 0, missing: 0 },
+  );
+
+  return {
+    ...totals,
+    missingByRegion,
+  };
+}
 
 function isAuthorized(request: NextRequest): boolean {
   const secret = process.env.CRON_SECRET;
@@ -24,6 +53,8 @@ export async function GET(request: NextRequest) {
 
   try {
     const result = await syncWeddingData();
+    const cpaCoverage = buildCpaCoverage(result.dataset);
+
     return NextResponse.json({
       ok: true,
       generatedAt: result.dataset.generatedAt,
@@ -31,6 +62,8 @@ export async function GET(request: NextRequest) {
       storage: result.storage,
       wroteToStorage: result.wroteToStorage,
       wroteToFile: result.wroteToFile,
+      cpa: cpaCoverage,
+      hasMissingCpa: cpaCoverage.missing > 0,
     });
   } catch (error) {
     return NextResponse.json(

@@ -56,6 +56,17 @@ npm run deploy
 - `NEXT_PUBLIC_META_PIXEL_ID` 또는 `META_PIXEL_ID`
 - `NEXT_PUBLIC_CARD_WHOLE_CLICK_CPA` (`true` 시 카드 전체 클릭 CPA 활성화)
 
+## 자동 동기화/알림 (GitHub Actions)
+
+- 워크플로우: `.github/workflows/sync-wedding.yml`
+- 실행 주기: 매 정각(UTC 기준, hourly)
+- 필요 Secrets:
+  - `SYNC_URL` (예: `https://weddingdamoa.com`)
+  - `CRON_SECRET` (`/api/cron/sync-wedding` 인증용)
+  - `CPA_ALERT_WEBHOOK_URL` (선택, 실패/CPA 누락 시 webhook 전송)
+
+동기화 API 응답에 `cpa.missing`이 1개 이상이면 워크플로우를 실패 처리해서 즉시 감지할 수 있습니다.
+
 ## 데이터 파일
 
 - `public/data/wedding.json`
