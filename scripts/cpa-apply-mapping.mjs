@@ -19,6 +19,31 @@ function clean(value) {
   return String(value ?? "").trim();
 }
 
+function detectDelimiter(line) {
+  if (line.includes("\t")) {
+    return "\t";
+  }
+  if (line.includes(",")) {
+    return ",";
+  }
+  return "\t";
+}
+
+function splitLine(line, delimiter) {
+  return line.split(delimiter).map((cell) => clean(cell));
+}
+
+function findHeaderIndex(headers, names) {
+  const normalized = headers.map((header) => clean(header).toLowerCase());
+  for (const name of names) {
+    const index = normalized.indexOf(name.toLowerCase());
+    if (index >= 0) {
+      return index;
+    }
+  }
+  return -1;
+}
+
 function isValidHttpUrl(value) {
   try {
     const url = new URL(value);
@@ -50,10 +75,10 @@ async function main() {
     throw new Error("Mapping file is empty. Run `npm run cpa:export` first.");
   }
 
-  const header = lines[0].split("\t");
-  const detailUrlIndex = header.indexOf("detailUrl");
-  const cpaIndexCandidates = ["newCpaUrl", "cpaUrl"];
-  const cpaIndex = cpaIndexCandidates.map((name) => header.indexOf(name)).find((idx) => idx >= 0) ?? -1;
+  const delimiter = detectDelimiter(lines[0]);
+  const header = splitLine(lines[0], delimiter);
+  const detailUrlIndex = findHeaderIndex(header, ["detailUrl"]);
+  const cpaIndex = findHeaderIndex(header, ["newCpaUrl", "cpaUrl", "currentCpaUrl"]);
 
   if (detailUrlIndex < 0 || cpaIndex < 0) {
     throw new Error("Header must include `detailUrl` and `newCpaUrl` (or `cpaUrl`).");
@@ -63,7 +88,7 @@ async function main() {
   const invalidRows = [];
 
   for (let i = 1; i < lines.length; i += 1) {
-    const row = lines[i].split("\t");
+    const row = splitLine(lines[i], delimiter);
     const detailUrl = clean(row[detailUrlIndex]);
     const cpaUrl = clean(row[cpaIndex]);
     if (!detailUrl || !cpaUrl) {
