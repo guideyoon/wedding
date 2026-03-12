@@ -89,7 +89,7 @@ async function main() {
   const lines = [header, ...body].map((row) => row.join("\t")).join("\n");
   const outputPath = path.join(process.cwd(), out);
 
-  await writeFile(outputPath, `${lines}\n`, "utf-8");
+  await writeFile(outputPath, `\uFEFF${lines}\n`, "utf-8");
 
   console.log(`Exported ${body.length} unique detail URLs to ${out}`);
   console.log("Fill only the `newCpaUrl` column, then run: npm run cpa:apply");

@@ -78,9 +78,10 @@ async function main() {
   const delimiter = detectDelimiter(lines[0]);
   const header = splitLine(lines[0], delimiter);
   const detailUrlIndex = findHeaderIndex(header, ["detailUrl"]);
-  const cpaIndex = findHeaderIndex(header, ["newCpaUrl", "cpaUrl", "currentCpaUrl"]);
+  const newCpaIndex = findHeaderIndex(header, ["newCpaUrl"]);
+  const cpaIndex = findHeaderIndex(header, ["cpaUrl", "currentCpaUrl"]);
 
-  if (detailUrlIndex < 0 || cpaIndex < 0) {
+  if (detailUrlIndex < 0 || (newCpaIndex < 0 && cpaIndex < 0)) {
     throw new Error("Header must include `detailUrl` and `newCpaUrl` (or `cpaUrl`).");
   }
 
@@ -90,7 +91,7 @@ async function main() {
   for (let i = 1; i < lines.length; i += 1) {
     const row = splitLine(lines[i], delimiter);
     const detailUrl = clean(row[detailUrlIndex]);
-    const cpaUrl = clean(row[cpaIndex]);
+    const cpaUrl = clean((newCpaIndex >= 0 ? row[newCpaIndex] : "") || (cpaIndex >= 0 ? row[cpaIndex] : ""));
     if (!detailUrl || !cpaUrl) {
       continue;
     }
