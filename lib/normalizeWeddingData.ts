@@ -60,6 +60,7 @@ function toWeddingEvent(
     detailUrl: candidate.detailUrl || previous?.detailUrl || "",
     cpaUrl: previous?.cpaUrl || "",
     heroImageUrl: candidate.heroImageUrl || previous?.heroImageUrl || "",
+    sourceAdData: candidate.sourceAdData || previous?.sourceAdData || "",
     badges: candidate.badges.length ? candidate.badges : (previous?.badges ?? []),
     updatedAt: generatedAt,
   };

@@ -15,6 +15,7 @@ export interface ParsedEventCandidate {
   venueText: string;
   detailUrl: string;
   heroImageUrl: string;
+  sourceAdData: string;
   badges: string[];
 }
 
@@ -210,6 +211,7 @@ function parseSectionCards(html: string, sourceUrl: string): {
         venueText,
         detailUrl,
         heroImageUrl,
+        sourceAdData: "",
         badges,
       });
     }
@@ -265,6 +267,7 @@ function parseWithGenericAnchorStrategy(html: string, sourceUrl: string): {
       venueText,
       detailUrl,
       heroImageUrl,
+      sourceAdData: "",
       badges,
     });
   }
@@ -300,4 +303,9 @@ export function parseHeroImageFromDetailHtml(detailHtml: string, sourceUrl: stri
     .map((element) => html$(element).attr("src") ?? "")
     .find((src) => !!src && !src.startsWith("data:"));
   return image ? toAbsoluteUrl(image, sourceUrl) : "";
+}
+
+export function parseSourceAdDataFromDetailHtml(detailHtml: string): string {
+  const html$ = load(detailHtml);
+  return cleanText(html$("input[name='adData']").first().attr("value") ?? "");
 }

@@ -29,6 +29,7 @@ export interface WeddingEvent {
   detailUrl: string;
   cpaUrl: string;
   heroImageUrl: string;
+  sourceAdData?: string;
   badges: string[];
   updatedAt: string;
 }
