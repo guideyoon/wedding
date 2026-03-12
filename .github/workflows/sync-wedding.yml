@@ -40,11 +40,14 @@ jobs:
           }
 
           const cpa = response.cpa ?? {};
+          const cpaDrift = response.cpaDrift ?? {};
           const total = Number(cpa.total ?? 0);
           const withCpa = Number(cpa.withCpa ?? 0);
           const missing = Number(cpa.missing ?? 0);
+          const sourceAdDataChanged = Number(cpaDrift.sourceAdDataChanged ?? 0);
 
           console.log(`CPA coverage: ${withCpa}/${total} (missing: ${missing})`);
+          console.log(`CPA source drift: ${sourceAdDataChanged}`);
 
           if (missing > 0) {
             console.error('Detected missing CPA mappings.');
@@ -56,6 +59,16 @@ jobs:
               }
             }
             process.exit(2);
+          }
+
+          if (sourceAdDataChanged > 0) {
+            console.error('Detected source-side CPA token changes.');
+            if (Array.isArray(cpaDrift.changedEvents)) {
+              for (const item of cpaDrift.changedEvents.slice(0, 20)) {
+                console.error(`- ${item.title}: ${item.previousSourceAdData} -> ${item.currentSourceAdData}`);
+              }
+            }
+            process.exit(3);
           }
           NODE
 
@@ -81,13 +94,15 @@ jobs:
           except Exception:
               body = "{\"ok\":false,\"message\":\"No response.json\"}"
 
-          payload = {
-              "text": "[Wedding Sync Alert] 자동 동기화에서 CPA 누락 또는 실패가 감지되었습니다.",
-              "workflow": os.environ.get("GITHUB_WORKFLOW", ""),
-              "run_id": os.environ.get("GITHUB_RUN_ID", ""),
-              "run_url": f"https://github.com/{os.environ.get('GITHUB_REPOSITORY','')}/actions/runs/{os.environ.get('GITHUB_RUN_ID','')}",
-              "response": body[:4000],
-          }
+          message = "\n".join([
+              "[Wedding Sync Alert] 자동 동기화에서 CPA 누락 또는 변경이 감지되었습니다.",
+              f"workflow: {os.environ.get('GITHUB_WORKFLOW', '')}",
+              f"run: https://github.com/{os.environ.get('GITHUB_REPOSITORY','')}/actions/runs/{os.environ.get('GITHUB_RUN_ID','')}",
+              "response:",
+              body[:3500],
+          ])
+
+          payload = {"text": message}
 
           req = urllib.request.Request(
               webhook,
@@ -97,3 +112,56 @@ jobs:
           )
           urllib.request.urlopen(req, timeout=10).read()
           PY
+
+      - name: Create or update GitHub alert issue
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let responseBody = 'No response.json';
+            try {
+              responseBody = fs.readFileSync('response.json', 'utf8');
+            } catch (error) {
+              responseBody = `Failed to read response.json: ${error.message}`;
+            }
+
+            const title = '[Wedding Sync Alert] CPA drift or missing mapping detected';
+            const runUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = [
+              '자동 웨딩 동기화에서 CPA 누락 또는 source-side 변경이 감지되었습니다.',
+              '',
+              `- Workflow: ${process.env.GITHUB_WORKFLOW}`,
+              `- Run: ${runUrl}`,
+              '',
+              '```json',
+              responseBody.slice(0, 6000),
+              '```',
+            ].join('\n');
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              creator: 'github-actions[bot]',
+              per_page: 100,
+            });
+
+            const existing = issues.find((issue) => issue.title === title);
+
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['bug'],
+              });
+            }

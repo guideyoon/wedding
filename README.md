@@ -63,9 +63,11 @@ npm run deploy
 - 필요 Secrets:
   - `SYNC_URL` (예: `https://weddingdamoa.com`)
   - `CRON_SECRET` (`/api/cron/sync-wedding` 인증용)
-  - `CPA_ALERT_WEBHOOK_URL` (선택, 실패/CPA 누락 시 webhook 전송)
+  - `CPA_ALERT_WEBHOOK_URL` (선택, 실패/CPA 누락 시 webhook 전송 - Google Chat incoming webhook 가능)
 
 동기화 API 응답에 `cpa.missing`이 1개 이상이면 워크플로우를 실패 처리해서 즉시 감지할 수 있습니다.
+또한 replyalba 상세페이지의 `input[name="adData"]` 값이 이전 스냅샷과 달라지면 source-side CPA 변경 가능성으로 간주해 워크플로우를 실패 처리합니다.
+외부 webhook을 쓸 수 없는 환경이라도, 실패 시 GitHub Issue를 자동 생성/갱신해서 저장소 알림과 이메일 알림으로 바로 확인할 수 있습니다.
 
 ## 데이터 파일
 
