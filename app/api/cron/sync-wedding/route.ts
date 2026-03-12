@@ -64,6 +64,8 @@ export async function GET(request: NextRequest) {
       wroteToFile: result.wroteToFile,
       cpa: cpaCoverage,
       hasMissingCpa: cpaCoverage.missing > 0,
+      cpaDrift: result.cpaDrift,
+      hasCpaDrift: result.cpaDrift.sourceAdDataChanged > 0,
     });
   } catch (error) {
     return NextResponse.json(
