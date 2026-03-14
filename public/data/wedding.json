@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-03-12T11:18:35.830Z",
+  "generatedAt": "2026-03-14T01:56:18.623Z",
   "regions": [
     {
       "key": "seoul",
       "name": "서울",
-      "heroImageUrl": "https://replyalba.com/banner/RB8LA1772515622.jpg",
+      "heroImageUrl": "https://replyalba.com/banner/YXY791773107658.jpg",
       "events": [
         {
           "id": "seoul-20260301-다이렉트-결혼준비-웨딩박람회",
@@ -19,7 +19,7 @@
           "heroImageUrl": "https://replyalba.com/banner/YXY791773107658.jpg",
           "sourceAdData": "directwd",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260314-건대-롯데백화점-스타시티점-레브웨딩박람회",
@@ -34,7 +34,7 @@
           "heroImageUrl": "https://replyalba.com/banner/FHYXU1766725573.jpg",
           "sourceAdData": "revew_ku",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260314-건대-롯데백화점-스타시티점-레브혼수가전박람회",
@@ -49,22 +49,7 @@
           "heroImageUrl": "https://replyalba.com/banner/L7MS81767336852.jpg",
           "sourceAdData": "revew_kulg",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260314-더현대-서울-대형-웨딩박람회",
-          "region": "seoul",
-          "title": "더현대 서울 대형 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "서울 영등포구 여의대로 108 더현대 서울 5층 삼성 메가스토어 특별전시장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_sohd/",
-          "cpaUrl": "https://replyalba.com/pt/JtxJYSAqxV",
-          "heroImageUrl": "https://replyalba.com/banner/FGLHE1767926521.jpg",
-          "sourceAdData": "wedcrowd_sohd",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260314-서울-세텍-웨딩박람회",
@@ -79,7 +64,7 @@
           "heroImageUrl": "https://replyalba.com/banner/WKUGS1735780252.jpg",
           "sourceAdData": "ponw_ssw",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260314-서울-세텍-웨딩홀박람회",
@@ -94,7 +79,7 @@
           "heroImageUrl": "https://replyalba.com/banner/2GU9J1735780600.jpg",
           "sourceAdData": "ponw_ssd",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260314-서울-세텍-허니문박람회",
@@ -109,52 +94,7 @@
           "heroImageUrl": "https://replyalba.com/banner/15C2J1735780595.jpg",
           "sourceAdData": "ponw_ssh",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260314-웨덱스웨딩박람회-in-코엑스마곡",
-          "region": "seoul",
-          "title": "웨덱스웨딩박람회 in 코엑스마곡",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "서울 강서구 마곡중앙로 143 코엑스 마곡컨벤션 센터",
-          "detailUrl": "https://replyalba.com/intros/comg0830/",
-          "cpaUrl": "https://replyalba.com/pt/RxxIEQbReP",
-          "heroImageUrl": "https://replyalba.com/banner/BBEZV1772520993.jpg",
-          "sourceAdData": "comg0830",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260314-잠실-롯데백화점-대형-웨딩박람회",
-          "region": "seoul",
-          "title": "잠실 롯데백화점 대형 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "서울 송파구 올림픽로 240 10층 삼성스토어 특별행사장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_jslt/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSxarFl",
-          "heroImageUrl": "https://replyalba.com/banner/MSVWS1743119890.jpg",
-          "sourceAdData": "wedcrowd_jslt",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260314-coex-웨덱스x코웨드-웨딩페어",
-          "region": "seoul",
-          "title": "COEX 웨덱스X코웨드 웨딩페어",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "서울 강남구 삼성동 159, 코엑스",
-          "detailUrl": "https://replyalba.com/intros/coexwedding/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSvr7h1",
-          "heroImageUrl": "https://replyalba.com/banner/RB8LA1772515622.jpg",
-          "sourceAdData": "coexwedding",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260321-세텍-웨딩-페어",
@@ -169,7 +109,7 @@
           "heroImageUrl": "https://replyalba.com/banner/YS4ZT1743125711.jpg",
           "sourceAdData": "st_wdf",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260321-세텍-웨딩홀-페어",
@@ -184,7 +124,7 @@
           "heroImageUrl": "https://replyalba.com/banner/MXET31743125714.jpg",
           "sourceAdData": "st_whf",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260321-세텍-허니문-페어",
@@ -199,7 +139,7 @@
           "heroImageUrl": "https://replyalba.com/banner/LOROD1768897870.jpg",
           "sourceAdData": "st_hnf",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260321-용산-아이파크몰-대형-웨딩박람회",
@@ -214,7 +154,7 @@
           "heroImageUrl": "https://replyalba.com/banner/VSY201707797835.jpg",
           "sourceAdData": "wedcrowd_ys",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260321-웨덱스웨딩페어-in-마곡코엑스",
@@ -229,7 +169,7 @@
           "heroImageUrl": "https://replyalba.com/banner/75RLZ1773022949.jpg",
           "sourceAdData": "coexmagok",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260321-웨딩더하기-영등포-신세계-타임스퀘어-웨딩박람회",
@@ -244,127 +184,7 @@
           "heroImageUrl": "https://replyalba.com/banner/Q24RC1762388790.jpg",
           "sourceAdData": "wplus_ydp",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260328-서울-명동-웨딩박람회",
-          "region": "seoul",
-          "title": "서울 명동 웨딩박람회",
-          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
-          "startDate": "2026-03-28",
-          "endDate": "2026-03-29",
-          "venueText": "서울 중구 소공로 63 신세계백화점 본점 12층 특별 행사장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_ssg/",
-          "cpaUrl": "https://replyalba.com/pt/RxxIERwdSe",
-          "heroImageUrl": "https://replyalba.com/banner/C39JD1758611009.jpg",
-          "sourceAdData": "wedcrowd_ssg",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260328-서울-신혼여행-박람회",
-          "region": "seoul",
-          "title": "서울 신혼여행 박람회",
-          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
-          "startDate": "2026-03-28",
-          "endDate": "2026-03-29",
-          "venueText": "서울 강남구 테헤란로 518 섬유센터 3F 이벤트홀",
-          "detailUrl": "https://replyalba.com/intros/planon_sth/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSxTi8O",
-          "heroImageUrl": "https://replyalba.com/banner/BB7OR1764216451.jpg",
-          "sourceAdData": "planon_sth",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260328-서울-웨딩드레스-페어",
-          "region": "seoul",
-          "title": "서울 웨딩드레스 페어",
-          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
-          "startDate": "2026-03-28",
-          "endDate": "2026-03-29",
-          "venueText": "서울 강남구 테헤란로 518 섬유센터 3F 이벤트홀",
-          "detailUrl": "https://replyalba.com/intros/planon_stwd/",
-          "cpaUrl": "https://replyalba.com/pt/zcvY2IuD6F",
-          "heroImageUrl": "https://replyalba.com/banner/LJZ5O1764211585.jpg",
-          "sourceAdData": "planon_stwd",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260328-서울-웨딩홀-박람회",
-          "region": "seoul",
-          "title": "서울 웨딩홀 박람회",
-          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
-          "startDate": "2026-03-28",
-          "endDate": "2026-03-29",
-          "venueText": "서울 강남구 테헤란로 518 섬유센터 3F 이벤트홀",
-          "detailUrl": "https://replyalba.com/intros/planon_stwh/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSvZV2O",
-          "heroImageUrl": "https://replyalba.com/banner/Q03891764211527.jpg",
-          "sourceAdData": "planon_stwh",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260328-용산-아이파크-웨딩박람회",
-          "region": "seoul",
-          "title": "용산 아이파크 웨딩박람회",
-          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
-          "startDate": "2026-03-28",
-          "endDate": "2026-03-29",
-          "venueText": "서울 용산구 한강대로23길 55 아이파크몰 리빙파크 5층 리바트 가구 특별행사장",
-          "detailUrl": "https://replyalba.com/intros/planon_yiwf/",
-          "cpaUrl": "https://replyalba.com/pt/RxxIEPFPQs",
-          "heroImageUrl": "https://replyalba.com/banner/VLOVS1772521216.jpg",
-          "sourceAdData": "planon_yiwf",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260328-용산-아이파크-혼수박람회",
-          "region": "seoul",
-          "title": "용산 아이파크 혼수박람회",
-          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
-          "startDate": "2026-03-28",
-          "endDate": "2026-03-29",
-          "venueText": "서울 용산구 한강대로23길 55 아이파크몰 리빙파크 5층 리바트 가구 특별행사장",
-          "detailUrl": "https://replyalba.com/intros/planon_yihf/",
-          "cpaUrl": "https://replyalba.com/pt/RxxIEQubAy",
-          "heroImageUrl": "https://replyalba.com/banner/14HWA1772521219.jpg",
-          "sourceAdData": "planon_yihf",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260328-청량리-롯데백화점-대형-웨딩박람회",
-          "region": "seoul",
-          "title": "청량리 롯데백화점 대형 웨딩박람회",
-          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
-          "startDate": "2026-03-28",
-          "endDate": "2026-03-29",
-          "venueText": "서울 동대문구 왕산로 214 롯데백화점 청량리점 7층 특별행사장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_cnn/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSwQt8i",
-          "heroImageUrl": "https://replyalba.com/banner/P4CSW1755567081.jpg",
-          "sourceAdData": "wedcrowd_cnn",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "seoul-20260328-at센터-서울-대형-웨딩페스티벌",
-          "region": "seoul",
-          "title": "aT센터 서울 대형 웨딩페스티벌",
-          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
-          "startDate": "2026-03-28",
-          "endDate": "2026-03-29",
-          "venueText": "서울 서초구 강남대로 27, 양재 aT센터 특별행사장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_at/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSzN5Ac",
-          "heroImageUrl": "https://replyalba.com/banner/TP4ZA1759367288.jpg",
-          "sourceAdData": "wedcrowd_at",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260328-setec-웨딩박람회",
@@ -379,7 +199,7 @@
           "heroImageUrl": "https://replyalba.com/banner/MWER91747029728.jpg",
           "sourceAdData": "howto_setec",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "seoul-20260328-setec-허니문박람회",
@@ -394,14 +214,149 @@
           "heroImageUrl": "https://replyalba.com/banner/68CUD1773033091.jpg",
           "sourceAdData": "howto_sthnm",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "seoul-20260328-at센터-서울-대형-웨딩페스티벌",
+          "region": "seoul",
+          "title": "aT센터 서울 대형 웨딩페스티벌",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "서울 서초구 강남대로 27, 양재 aT센터 특별행사장",
+          "detailUrl": "https://replyalba.com/intros/wedcrowd_at/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSzN5Ac",
+          "heroImageUrl": "https://replyalba.com/banner/TP4ZA1759367288.jpg",
+          "sourceAdData": "wedcrowd_at",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "seoul-20260328-더현대-서울-대형-웨딩박람회",
+          "region": "seoul",
+          "title": "더현대 서울 대형 웨딩박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "서울 영등포구 여의대로 108 더현대 서울 5층 삼성 메가스토어 특별전시장",
+          "detailUrl": "https://replyalba.com/intros/wedcrowd_sohd/",
+          "cpaUrl": "https://replyalba.com/pt/JtxJYSAqxV",
+          "heroImageUrl": "https://replyalba.com/banner/FGLHE1767926521.jpg",
+          "sourceAdData": "wedcrowd_sohd",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "seoul-20260328-서울-명동-웨딩박람회",
+          "region": "seoul",
+          "title": "서울 명동 웨딩박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "서울 중구 소공로 63 신세계백화점 본점 12층 특별 행사장",
+          "detailUrl": "https://replyalba.com/intros/wedcrowd_ssg/",
+          "cpaUrl": "https://replyalba.com/pt/RxxIERwdSe",
+          "heroImageUrl": "https://replyalba.com/banner/C39JD1758611009.jpg",
+          "sourceAdData": "wedcrowd_ssg",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "seoul-20260328-서울-신혼여행-박람회",
+          "region": "seoul",
+          "title": "서울 신혼여행 박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "서울 강남구 테헤란로 518 섬유센터 3F 이벤트홀",
+          "detailUrl": "https://replyalba.com/intros/planon_sth/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSxTi8O",
+          "heroImageUrl": "https://replyalba.com/banner/BB7OR1764216451.jpg",
+          "sourceAdData": "planon_sth",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "seoul-20260328-서울-웨딩드레스-페어",
+          "region": "seoul",
+          "title": "서울 웨딩드레스 페어",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "서울 강남구 테헤란로 518 섬유센터 3F 이벤트홀",
+          "detailUrl": "https://replyalba.com/intros/planon_stwd/",
+          "cpaUrl": "https://replyalba.com/pt/zcvY2IuD6F",
+          "heroImageUrl": "https://replyalba.com/banner/LJZ5O1764211585.jpg",
+          "sourceAdData": "planon_stwd",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "seoul-20260328-서울-웨딩홀-박람회",
+          "region": "seoul",
+          "title": "서울 웨딩홀 박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "서울 강남구 테헤란로 518 섬유센터 3F 이벤트홀",
+          "detailUrl": "https://replyalba.com/intros/planon_stwh/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSvZV2O",
+          "heroImageUrl": "https://replyalba.com/banner/Q03891764211527.jpg",
+          "sourceAdData": "planon_stwh",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "seoul-20260328-용산-아이파크-웨딩박람회",
+          "region": "seoul",
+          "title": "용산 아이파크 웨딩박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "서울 용산구 한강대로23길 55 아이파크몰 리빙파크 5층 리바트 가구 특별행사장",
+          "detailUrl": "https://replyalba.com/intros/planon_yiwf/",
+          "cpaUrl": "https://replyalba.com/pt/RxxIEPFPQs",
+          "heroImageUrl": "https://replyalba.com/banner/VLOVS1772521216.jpg",
+          "sourceAdData": "planon_yiwf",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "seoul-20260328-용산-아이파크-혼수박람회",
+          "region": "seoul",
+          "title": "용산 아이파크 혼수박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "서울 용산구 한강대로23길 55 아이파크몰 리빙파크 5층 리바트 가구 특별행사장",
+          "detailUrl": "https://replyalba.com/intros/planon_yihf/",
+          "cpaUrl": "https://replyalba.com/pt/RxxIEQubAy",
+          "heroImageUrl": "https://replyalba.com/banner/14HWA1772521219.jpg",
+          "sourceAdData": "planon_yihf",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "seoul-20260328-청량리-롯데백화점-대형-웨딩박람회",
+          "region": "seoul",
+          "title": "청량리 롯데백화점 대형 웨딩박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "서울 동대문구 왕산로 214 롯데백화점 청량리점 7층 특별행사장",
+          "detailUrl": "https://replyalba.com/intros/wedcrowd_cnn/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSwQt8i",
+          "heroImageUrl": "https://replyalba.com/banner/P4CSW1755567081.jpg",
+          "sourceAdData": "wedcrowd_cnn",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         }
       ]
     },
     {
       "key": "gyeonggi",
       "name": "경기",
-      "heroImageUrl": "https://replyalba.com/banner/TE6MC1767599867.jpg",
+      "heroImageUrl": "https://replyalba.com/banner/C4PWV1711939580.jpg",
       "events": [
         {
           "id": "gyeonggi-20260301-가우디웨딩-수원토탈샵",
@@ -416,7 +371,7 @@
           "heroImageUrl": "https://replyalba.com/banner/C4PWV1711939580.jpg",
           "sourceAdData": "gaudi",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260301-수원토탈샵-라벨르엘린-스드메-상담예약",
@@ -431,7 +386,7 @@
           "heroImageUrl": "https://replyalba.com/banner/GB7DA1720511402.jpg",
           "sourceAdData": "paris_total",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260301-안산-삼성-고잔점-위드유-웨딩박람회",
@@ -446,7 +401,7 @@
           "heroImageUrl": "https://replyalba.com/banner/FLQRH1743397476.jpg",
           "sourceAdData": "withu_asss",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260301-이본한복-상담신청",
@@ -461,7 +416,7 @@
           "heroImageUrl": "https://replyalba.com/banner/K8EQ31752626553.jpg",
           "sourceAdData": "paris_ebon",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260314-광교-갤러리아백화점-웨딩박람회",
@@ -476,52 +431,7 @@
           "heroImageUrl": "https://replyalba.com/banner/HE12E1755485534.jpg",
           "sourceAdData": "paris_swgg",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gyeonggi-20260314-광명-ak-대형-웨딩박람회",
-          "region": "gyeonggi",
-          "title": "광명 AK 대형 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "경기 광명시 양지로 17 AK PLAZA 광명",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_gmak/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSzBGo1",
-          "heroImageUrl": "https://replyalba.com/banner/E3V0W1750136079.jpg",
-          "sourceAdData": "wedcrowd_gmak",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gyeonggi-20260314-더셜리-화성동탄-롯데백화점-웨딩박람회",
-          "region": "gyeonggi",
-          "title": "더셜리 화성/동탄 롯데백화점 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "경기 화성시 동탄역로 160 화성(동탄)롯데백화점 6층 LG전자 특별행사장",
-          "detailUrl": "https://replyalba.com/intros/shirley_hsdt/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSwKJBX",
-          "heroImageUrl": "https://replyalba.com/banner/8D0XZ1762490698.jpg",
-          "sourceAdData": "shirley_hsdt",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gyeonggi-20260314-부천-현대백화점-대형-웨딩박람회",
-          "region": "gyeonggi",
-          "title": "부천 현대백화점 대형 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "경기 부천시 원미구 길주로 180 현대백화점 중동점 7F 특별전시장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_bc/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSwEB0X",
-          "heroImageUrl": "https://replyalba.com/banner/7WG1C1713942475.jpg",
-          "sourceAdData": "wedcrowd_bc",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260314-성남용인-그랜드-웨딩페어",
@@ -536,22 +446,7 @@
           "heroImageUrl": "https://replyalba.com/banner/0FM571761291731.jpg",
           "sourceAdData": "wnco_snbd",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gyeonggi-20260314-수원-갤러리아-광교-대형-웨딩박람회",
-          "region": "gyeonggi",
-          "title": "수원 갤러리아 광교 대형 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "경기 수원시 영통구 광교중앙로 124 수원 갤러리아 백화점 특별 행사장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_swgg/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSu9cum",
-          "heroImageUrl": "https://replyalba.com/banner/MEMLF1713495304.jpg",
-          "sourceAdData": "wedcrowd_swgg",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260314-수원-메쎄-웨딩박람회",
@@ -566,22 +461,7 @@
           "heroImageUrl": "https://replyalba.com/banner/SIJVK1721289640.jpg",
           "sourceAdData": "paris_swms",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gyeonggi-20260314-수원-웨딩거리-웨딩박람회",
-          "region": "gyeonggi",
-          "title": "수원 웨딩거리 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "경기 수원시 팔달구 효원로 62, 수원웨딩만들기 웨딩타운 전층",
-          "detailUrl": "https://replyalba.com/intros/paris_swwt/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSzSMAA",
-          "heroImageUrl": "https://replyalba.com/banner/DK5S31709699054.jpg",
-          "sourceAdData": "paris_swwt",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260314-스타필드-고양-그랜드-웨딩페어",
@@ -596,52 +476,7 @@
           "heroImageUrl": "https://replyalba.com/banner/TE6MC1767599867.jpg",
           "sourceAdData": "wnco_gy",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gyeonggi-20260314-안양-롯데백화점-평촌-웨딩박람회",
-          "region": "gyeonggi",
-          "title": "안양 롯데백화점 평촌 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "경기 안양시 동안구 시민대로 180 롯데백화점 평촌점 특별전시장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_pc/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSyaZA4",
-          "heroImageUrl": "https://replyalba.com/banner/A68FQ1722219656.jpg",
-          "sourceAdData": "wedcrowd_pc",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gyeonggi-20260314-월컨투-화성동탄-허니문박람회",
-          "region": "gyeonggi",
-          "title": "월컨투 화성/동탄 허니문박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "경기 화성시 동탄역로 160 화성(동탄)롯데백화점 6층 LG전자 특별행사장",
-          "detailUrl": "https://replyalba.com/intros/shirley_wcthsdt/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSzpj2w",
-          "heroImageUrl": "https://replyalba.com/banner/W5QX31770968603.jpg",
-          "sourceAdData": "shirley_wcthsdt",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gyeonggi-20260314-일산킨텍스-최대규모-대형-웨딩박람회",
-          "region": "gyeonggi",
-          "title": "일산킨텍스 최대규모 대형 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "경기 고양시 일산서구 킨텍스로 217-60 킨텍스 2전시장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_iss/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSuNMz9",
-          "heroImageUrl": "https://replyalba.com/banner/TRSF81704428926.jpg",
-          "sourceAdData": "wedcrowd_iss",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260314-평택-그랜드-웨딩페어",
@@ -656,7 +491,7 @@
           "heroImageUrl": "https://replyalba.com/banner/BB7WF1768286679.jpg",
           "sourceAdData": "wnco_pt",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260314-하남-패밀리-웨딩박람회",
@@ -671,22 +506,7 @@
           "heroImageUrl": "https://replyalba.com/banner/AJT131756173028.jpg",
           "sourceAdData": "familytour_hn",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gyeonggi-20260314-현대백화점-판교점-웨딩박람회",
-          "region": "gyeonggi",
-          "title": "현대백화점 판교점 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "경기 성남시 분당구 판교역로146번길 20 7층 삼성스토어 특별전시장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_pg/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSvJSw8",
-          "heroImageUrl": "https://replyalba.com/banner/ZLMCK1709611901.jpg",
-          "sourceAdData": "wedcrowd_pg",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-더셜리-의정부-신세계-웨딩박람회",
@@ -701,7 +521,7 @@
           "heroImageUrl": "https://replyalba.com/banner/SY72G1726714450.jpg",
           "sourceAdData": "shirley_uijeonbu",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-부천-위드유-웨딩박람회",
@@ -716,7 +536,22 @@
           "heroImageUrl": "https://replyalba.com/banner/0SU2D1744594535.jpg",
           "sourceAdData": "withu_bcss",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "gyeonggi-20260321-수원-웨딩거리-웨딩박람회",
+          "region": "gyeonggi",
+          "title": "수원 웨딩거리 웨딩박람회",
+          "dateRangeText": "2026.03.21(토) - 2026.03.22(일)",
+          "startDate": "2026-03-21",
+          "endDate": "2026-03-22",
+          "venueText": "경기 수원시 팔달구 효원로 62, 수원웨딩만들기 웨딩타운 전층",
+          "detailUrl": "https://replyalba.com/intros/paris_swwt/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSzSMAA",
+          "heroImageUrl": "https://replyalba.com/banner/DK5S31709699054.jpg",
+          "sourceAdData": "paris_swwt",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-수원-컨벤션센터-하우투-웨딩박람회",
@@ -731,7 +566,7 @@
           "heroImageUrl": "https://replyalba.com/banner/H62X01736128658.jpg",
           "sourceAdData": "howto_swcon",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-수원-컨벤션센터-하우투-허니문박람회",
@@ -746,7 +581,7 @@
           "heroImageUrl": "https://replyalba.com/banner/84Q8K1773282604.jpg",
           "sourceAdData": "howto_swchnm",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-수원-타임빌라스-웨딩박람회",
@@ -761,7 +596,7 @@
           "heroImageUrl": "https://replyalba.com/banner/MGIQC1721713053.jpg",
           "sourceAdData": "paris_swlt",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-수원메쎄-대형-웨딩박람회",
@@ -776,7 +611,7 @@
           "heroImageUrl": "https://replyalba.com/banner/HUQH21704432817.jpg",
           "sourceAdData": "wedcrowd_swms",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-수원컨벤션센터-초대형-웨딩박람회",
@@ -791,7 +626,7 @@
           "heroImageUrl": "https://replyalba.com/banner/R8J6M1704428936.jpg",
           "sourceAdData": "wedcrowd_sw",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-안성-스타필드-그랜드-웨딩페어",
@@ -806,7 +641,7 @@
           "heroImageUrl": "https://replyalba.com/banner/W0GU81772521244.jpg",
           "sourceAdData": "wnco_as",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-용인-패밀리-웨딩박람회",
@@ -821,7 +656,7 @@
           "heroImageUrl": "https://replyalba.com/banner/B98UW1762151563.jpg",
           "sourceAdData": "familytour_yi",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-월컨투-의정부-허니문박람회",
@@ -836,7 +671,7 @@
           "heroImageUrl": "https://replyalba.com/banner/ZIOK61771823892.jpg",
           "sourceAdData": "shirley_wctujb",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-일산-패밀리-웨딩박람회",
@@ -851,7 +686,7 @@
           "heroImageUrl": "https://replyalba.com/banner/9PWAD1760079813.jpg",
           "sourceAdData": "familytour_is",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-중동-롯데백화점-레브웨딩박람회",
@@ -866,7 +701,7 @@
           "heroImageUrl": "https://replyalba.com/banner/6R2XL1772514241.jpg",
           "sourceAdData": "revew_jdw",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-중동-롯데백화점-레브혼수가전박람회",
@@ -881,7 +716,7 @@
           "heroImageUrl": "https://replyalba.com/banner/QZ77E1772514244.jpg",
           "sourceAdData": "revew_jdlg",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-타임빌라스-수원-대형-웨딩박람회",
@@ -896,7 +731,7 @@
           "heroImageUrl": "https://replyalba.com/banner/CWVGI1761291718.jpg",
           "sourceAdData": "wnco_sw",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260321-평택-lg베스트샵-위드유-웨딩박람회",
@@ -911,7 +746,7 @@
           "heroImageUrl": "https://replyalba.com/banner/8HCOT1769409438.jpg",
           "sourceAdData": "withu_ptlg",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260328-동탄-롯데백화점-그랜드-웨딩페어",
@@ -926,7 +761,37 @@
           "heroImageUrl": "https://replyalba.com/banner/MBCZK1762753410.jpg",
           "sourceAdData": "wnco_dt",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "gyeonggi-20260328-수원-ak플라자-웨딩박람회",
+          "region": "gyeonggi",
+          "title": "수원 AK플라자 웨딩박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "경기 수원시 팔달구 덕영대로 924 AK플라자 수원 6층 아트홀",
+          "detailUrl": "https://replyalba.com/intros/paris_swak0328/",
+          "cpaUrl": "https://replyalba.com/pt/SsFRYTeZPK",
+          "heroImageUrl": "https://replyalba.com/banner/M2KAA1773387749.jpg",
+          "sourceAdData": "paris_swak0328",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "gyeonggi-20260328-수원-갤러리아-광교-대형-웨딩박람회",
+          "region": "gyeonggi",
+          "title": "수원 갤러리아 광교 대형 웨딩박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "경기 수원시 영통구 광교중앙로 124 수원 갤러리아 백화점 특별 행사장",
+          "detailUrl": "https://replyalba.com/intros/wedcrowd_swgg/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSu9cum",
+          "heroImageUrl": "https://replyalba.com/banner/MEMLF1713495304.jpg",
+          "sourceAdData": "wedcrowd_swgg",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260328-시흥-프리미엄아울렛-그랜드-웨딩페어",
@@ -941,7 +806,22 @@
           "heroImageUrl": "https://replyalba.com/banner/WWXJP1762753406.jpg",
           "sourceAdData": "wnco_sh",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "gyeonggi-20260328-안양-롯데백화점-평촌-웨딩박람회",
+          "region": "gyeonggi",
+          "title": "안양 롯데백화점 평촌 웨딩박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "경기 안양시 동안구 시민대로 180 롯데백화점 평촌점 특별전시장",
+          "detailUrl": "https://replyalba.com/intros/wedcrowd_pc/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSyaZA4",
+          "heroImageUrl": "https://replyalba.com/banner/A68FQ1722219656.jpg",
+          "sourceAdData": "wedcrowd_pc",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeonggi-20260328-이천-위드유-웨딩박람회",
@@ -956,7 +836,22 @@
           "heroImageUrl": "https://replyalba.com/banner/Z33CV1750401740.jpg",
           "sourceAdData": "withu_icjp",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "gyeonggi-20260328-일산킨텍스-최대규모-대형-웨딩박람회",
+          "region": "gyeonggi",
+          "title": "일산킨텍스 최대규모 대형 웨딩박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "경기 고양시 일산서구 킨텍스로 217-60 킨텍스 2전시장",
+          "detailUrl": "https://replyalba.com/intros/wedcrowd_iss/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSuNMz9",
+          "heroImageUrl": "https://replyalba.com/banner/TRSF81704428926.jpg",
+          "sourceAdData": "wedcrowd_iss",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         }
       ]
     },
@@ -965,6 +860,21 @@
       "name": "인천",
       "heroImageUrl": "https://replyalba.com/banner/Q2CIX1702267597.jpg",
       "events": [
+        {
+          "id": "incheon-20260301-iwc-인천-웨딩박람회",
+          "region": "incheon",
+          "title": "IWC 인천 웨딩박람회",
+          "dateRangeText": "2026.03.01(일) - 2026.03.31(화)",
+          "startDate": "2026-03-01",
+          "endDate": "2026-03-31",
+          "venueText": "인천 남동구 예술로 206 구월중앙프라자 3층 IWC인천웨딩컴퍼니",
+          "detailUrl": "https://replyalba.com/intros/iwc_incheon/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSyx7f7",
+          "heroImageUrl": "https://replyalba.com/banner/Q2CIX1702267597.jpg",
+          "sourceAdData": "iwc_incheon",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
         {
           "id": "incheon-20260301-레이첼-인천-웨딩박람회",
           "region": "incheon",
@@ -978,7 +888,7 @@
           "heroImageUrl": "https://replyalba.com/banner/HKSHR1736130062.jpg",
           "sourceAdData": "rachel_ic",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "incheon-20260301-로코코-웨딩드레스-초대전",
@@ -993,7 +903,7 @@
           "heroImageUrl": "https://replyalba.com/banner/ZHUIA1709096036.jpg",
           "sourceAdData": "rococo",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "incheon-20260301-인천-하이허니문",
@@ -1008,52 +918,7 @@
           "heroImageUrl": "https://replyalba.com/banner/8HGXM1743400939.jpg",
           "sourceAdData": "hihnm_ic",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "incheon-20260301-iwc-인천-웨딩박람회",
-          "region": "incheon",
-          "title": "IWC 인천 웨딩박람회",
-          "dateRangeText": "2026.03.01(일) - 2026.03.31(화)",
-          "startDate": "2026-03-01",
-          "endDate": "2026-03-31",
-          "venueText": "인천 남동구 예술로 206 구월중앙프라자 3층 IWC인천웨딩컴퍼니",
-          "detailUrl": "https://replyalba.com/intros/iwc_incheon/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSyx7f7",
-          "heroImageUrl": "https://replyalba.com/banner/Q2CIX1702267597.jpg",
-          "sourceAdData": "iwc_incheon",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "incheon-20260314-인천-lg베스트샵-위드유-웨딩박람회",
-          "region": "incheon",
-          "title": "인천 LG베스트샵 위드유 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "인천 미추홀구 인주대로 482 베스트샵 인천본점",
-          "detailUrl": "https://replyalba.com/intros/withu_iclg/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSwwnk4",
-          "heroImageUrl": "https://replyalba.com/banner/VHAA61756706036.jpg",
-          "sourceAdData": "withu_iclg",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "incheon-20260314-초대형-하이어-웨딩박람회",
-          "region": "incheon",
-          "title": "초대형 하이어 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "인천 부평구 길주로 520 LG전자베스트샵 부평구청점",
-          "detailUrl": "https://replyalba.com/intros/higher_ic/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSvdSL3",
-          "heroImageUrl": "https://replyalba.com/banner/SLFS21769494401.jpg",
-          "sourceAdData": "higher_ic",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "incheon-20260321-인천-송도컨벤시아-대형-웨딩박람회",
@@ -1068,7 +933,7 @@
           "heroImageUrl": "https://replyalba.com/banner/9CQ9Q1705982887.jpg",
           "sourceAdData": "wedcrowd_icsd",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         }
       ]
     },
@@ -1078,19 +943,19 @@
       "heroImageUrl": "https://replyalba.com/banner/51X8Y1693292347.jpg",
       "events": [
         {
-          "id": "busan-20260314-부산-더블혜택-웨딩박람회",
+          "id": "busan-20260314-부산-w웨딩시티-웨딩박람회",
           "region": "busan",
-          "title": "부산 더블혜택 웨딩박람회",
+          "title": "부산 W웨딩시티 웨딩박람회",
           "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
           "startDate": "2026-03-14",
           "endDate": "2026-03-15",
-          "venueText": "부산 부산진구 황령대로 13 한라시그마타워 1F",
-          "detailUrl": "https://replyalba.com/intros/charles_db/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSzM39M",
-          "heroImageUrl": "https://replyalba.com/banner/8S7PP1766713555.jpg",
-          "sourceAdData": "charles_db",
+          "venueText": "부산광역시 부산진구 자유평화로 11 W웨딩시티",
+          "detailUrl": "https://replyalba.com/intros/wwcity/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSy4Gx6",
+          "heroImageUrl": "https://replyalba.com/banner/51X8Y1693292347.jpg",
+          "sourceAdData": "wwcity",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "busan-20260314-부산-롯데백화점-본점-w웨딩박람회",
@@ -1105,7 +970,7 @@
           "heroImageUrl": "https://replyalba.com/banner/VOE9B1736227945.jpg",
           "sourceAdData": "w_lotte",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "busan-20260314-부산-반하나-허니문박람회",
@@ -1120,7 +985,7 @@
           "heroImageUrl": "https://replyalba.com/banner/BRGZU1688607462.jpg",
           "sourceAdData": "ktour_busan",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "busan-20260314-부산-신세계-센텀점-w웨딩박람회",
@@ -1135,52 +1000,7 @@
           "heroImageUrl": "https://replyalba.com/banner/LC1LW1736227524.jpg",
           "sourceAdData": "knn_centum",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "busan-20260314-부산-찰스-웨딩박람회",
-          "region": "busan",
-          "title": "부산 찰스 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "부산광역시 부산진구 황령대로 13 한라시그마타워 1F",
-          "detailUrl": "https://replyalba.com/intros/charles2/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSzBHKv",
-          "heroImageUrl": "https://replyalba.com/banner/XBIFU1766713272.jpg",
-          "sourceAdData": "charles2",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "busan-20260314-부산-w웨딩시티-웨딩박람회",
-          "region": "busan",
-          "title": "부산 W웨딩시티 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "부산광역시 부산진구 자유평화로 11 W웨딩시티",
-          "detailUrl": "https://replyalba.com/intros/wwcity/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSy4Gx6",
-          "heroImageUrl": "https://replyalba.com/banner/51X8Y1693292347.jpg",
-          "sourceAdData": "wwcity",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "busan-20260314-knn-부산-웨딩엑스포",
-          "region": "busan",
-          "title": "KNN 부산 웨딩엑스포",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "부산 해운대구 센텀서로 30 KNN방송국 특별행사장",
-          "detailUrl": "https://replyalba.com/intros/charles_land/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSzTBCL",
-          "heroImageUrl": "https://replyalba.com/banner/Z4OBF1732583342.jpg",
-          "sourceAdData": "charles_land",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "busan-20260320-bwb-부산-벡스코-웨딩박람회",
@@ -1195,7 +1015,7 @@
           "heroImageUrl": "https://replyalba.com/banner/W4SR61740372190.jpg",
           "sourceAdData": "bwbfair",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "busan-20260321-롯데백화점-부산본점-웨딩엑스포",
@@ -1210,15 +1030,75 @@
           "heroImageUrl": "https://replyalba.com/banner/JWKG91750993173.jpg",
           "sourceAdData": "charles_gb2",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "busan-20260321-부산-더블혜택-웨딩박람회",
+          "region": "busan",
+          "title": "부산 더블혜택 웨딩박람회",
+          "dateRangeText": "2026.03.21(토) - 2026.03.22(일)",
+          "startDate": "2026-03-21",
+          "endDate": "2026-03-22",
+          "venueText": "부산 부산진구 황령대로 13 한라시그마타워 1F",
+          "detailUrl": "https://replyalba.com/intros/charles_db/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSzM39M",
+          "heroImageUrl": "https://replyalba.com/banner/8S7PP1766713555.jpg",
+          "sourceAdData": "charles_db",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "busan-20260321-부산-찰스-웨딩박람회",
+          "region": "busan",
+          "title": "부산 찰스 웨딩박람회",
+          "dateRangeText": "2026.03.21(토) - 2026.03.22(일)",
+          "startDate": "2026-03-21",
+          "endDate": "2026-03-22",
+          "venueText": "부산광역시 부산진구 황령대로 13 한라시그마타워 1F",
+          "detailUrl": "https://replyalba.com/intros/charles2/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSzBHKv",
+          "heroImageUrl": "https://replyalba.com/banner/XBIFU1766713272.jpg",
+          "sourceAdData": "charles2",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "busan-20260328-knn-부산-웨딩엑스포",
+          "region": "busan",
+          "title": "KNN 부산 웨딩엑스포",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "부산 해운대구 센텀서로 30 KNN방송국 특별행사장",
+          "detailUrl": "https://replyalba.com/intros/charles_land/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSzTBCL",
+          "heroImageUrl": "https://replyalba.com/banner/Z4OBF1732583342.jpg",
+          "sourceAdData": "charles_land",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         }
       ]
     },
     {
       "key": "chungcheong",
       "name": "충청권",
-      "heroImageUrl": "https://replyalba.com/banner/KDE211709884865.jpg",
+      "heroImageUrl": "https://replyalba.com/banner/OR3ZD1703815656.jpg",
       "events": [
+        {
+          "id": "chungcheong-20260301-iwc-천안-웨딩박람회",
+          "region": "chungcheong",
+          "title": "IWC 천안 웨딩박람회",
+          "dateRangeText": "2026.03.01(일) - 2026.03.31(화)",
+          "startDate": "2026-03-01",
+          "endDate": "2026-03-31",
+          "venueText": "충남 천안시 서북구 미라16길 18 IWC 천안 웨딩박람회",
+          "detailUrl": "https://replyalba.com/intros/iwc_cheonan/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSz7BV1",
+          "heroImageUrl": "https://replyalba.com/banner/OR3ZD1703815656.jpg",
+          "sourceAdData": "iwc_cheonan",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
         {
           "id": "chungcheong-20260301-천안-테라스힐",
           "region": "chungcheong",
@@ -1232,7 +1112,7 @@
           "heroImageUrl": "https://replyalba.com/banner/LJDHB1711343483.jpg",
           "sourceAdData": "terracehill",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260301-천안-하이허니문",
@@ -1247,37 +1127,7 @@
           "heroImageUrl": "https://replyalba.com/banner/A733P1743400737.jpg",
           "sourceAdData": "hihnm_ca",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "chungcheong-20260301-iwc-천안-웨딩박람회",
-          "region": "chungcheong",
-          "title": "IWC 천안 웨딩박람회",
-          "dateRangeText": "2026.03.01(일) - 2026.03.31(화)",
-          "startDate": "2026-03-01",
-          "endDate": "2026-03-31",
-          "venueText": "충남 천안시 서북구 미라16길 18 IWC 천안 웨딩박람회",
-          "detailUrl": "https://replyalba.com/intros/iwc_cheonan/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSz7BV1",
-          "heroImageUrl": "https://replyalba.com/banner/OR3ZD1703815656.jpg",
-          "sourceAdData": "iwc_cheonan",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "chungcheong-20260314-대전-위드유-웨딩박람회",
-          "region": "chungcheong",
-          "title": "대전 위드유 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "대전 서구 계룡로 598 롯데백화점 대전점 B1 LG베스트샵",
-          "detailUrl": "https://replyalba.com/intros/withu_dj/",
-          "cpaUrl": "https://replyalba.com/pt/RxxIERLBFX",
-          "heroImageUrl": "https://replyalba.com/banner/KDE211709884865.jpg",
-          "sourceAdData": "withu_dj",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260314-대전-컨벤션센터-패밀리-웨딩박람회",
@@ -1292,52 +1142,7 @@
           "heroImageUrl": "https://replyalba.com/banner/7EFV91772764650.jpg",
           "sourceAdData": "familytour_dj",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "chungcheong-20260314-천안-갤러리아-대형-웨딩박람회",
-          "region": "chungcheong",
-          "title": "천안 갤러리아 대형 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "충남 천안시 서북구 공원로 227 갤러리아백화점 센터시티점 7F 특별전시장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_ca/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSuUvxj",
-          "heroImageUrl": "https://replyalba.com/banner/5BG0T1714107892.jpg",
-          "sourceAdData": "wedcrowd_ca",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "chungcheong-20260314-청주-오스코-초대형-웨딩박람회",
-          "region": "chungcheong",
-          "title": "청주 오스코 초대형 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "충북 청주시 흥덕구 오송읍 만수리 275-5 청주오스코 특별전시장",
-          "detailUrl": "https://replyalba.com/intros/wedcrowd_cjosco/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSwbJvy",
-          "heroImageUrl": "https://replyalba.com/banner/5K2C41754025930.jpg",
-          "sourceAdData": "wedcrowd_cjosco",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "chungcheong-20260314-충주-위드유-웨딩박람회",
-          "region": "chungcheong",
-          "title": "충주 위드유 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "충북 충주시 탄금대로 139 LG전자베스트샵 충주본점 특별행사장",
-          "detailUrl": "https://replyalba.com/intros/withu_cj/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSyrQIn",
-          "heroImageUrl": "https://replyalba.com/banner/5BGV61741745440.jpg",
-          "sourceAdData": "withu_cj",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260321-당진-그랜드-웨딩페어",
@@ -1352,7 +1157,7 @@
           "heroImageUrl": "https://replyalba.com/banner/HXD8X1761291725.jpg",
           "sourceAdData": "wnco_dj",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260321-대전-컨벤션센터-대형-웨딩박람회",
@@ -1367,7 +1172,7 @@
           "heroImageUrl": "https://replyalba.com/banner/8VL4S1734332075.jpg",
           "sourceAdData": "wedcrowd_dj",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260321-천안-신세계백화점-레브웨딩박람회",
@@ -1382,7 +1187,7 @@
           "heroImageUrl": "https://replyalba.com/banner/PEOTY1772514246.jpg",
           "sourceAdData": "revew_caw",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260321-천안-신세계백화점-레브혼수가전박람회",
@@ -1397,7 +1202,7 @@
           "heroImageUrl": "https://replyalba.com/banner/AJTZC1772514248.jpg",
           "sourceAdData": "revew_cahs",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260321-천안-아일랜드유-위드유-웨딩박람회",
@@ -1412,7 +1217,7 @@
           "heroImageUrl": "https://replyalba.com/banner/JEYZ61741745732.jpg",
           "sourceAdData": "withu_ca",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260321-청주-율랑점-엘지-위드유-웨딩박람회",
@@ -1427,7 +1232,7 @@
           "heroImageUrl": "https://replyalba.com/banner/0B6RI1766122997.jpg",
           "sourceAdData": "withu_cjyr",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260321-청주-이안테라스-대형-웨딩박람회",
@@ -1442,7 +1247,7 @@
           "heroImageUrl": "https://replyalba.com/banner/ZZIH81750229970.jpg",
           "sourceAdData": "wedcrowd_cj",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260321-청주-커넥트-현대-웨딩박람회",
@@ -1457,7 +1262,22 @@
           "heroImageUrl": "https://replyalba.com/banner/6OIS81767329742.jpg",
           "sourceAdData": "wedcrowd_cjc",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "chungcheong-20260328-대전-위드유-웨딩박람회",
+          "region": "chungcheong",
+          "title": "대전 위드유 웨딩박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "대전 서구 계룡로 598 롯데백화점 대전점 B1 LG베스트샵",
+          "detailUrl": "https://replyalba.com/intros/withu_dj/",
+          "cpaUrl": "https://replyalba.com/pt/RxxIERLBFX",
+          "heroImageUrl": "https://replyalba.com/banner/KDE211709884865.jpg",
+          "sourceAdData": "withu_dj",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260328-더셜리-청주-서원대학교-웨딩박람회",
@@ -1472,7 +1292,7 @@
           "heroImageUrl": "https://replyalba.com/banner/5XZ7G1700201155.jpg",
           "sourceAdData": "shirley_cheongju",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260328-월컨투-청주-허니문박람회",
@@ -1487,7 +1307,7 @@
           "heroImageUrl": "https://replyalba.com/banner/S1CUX1772584001.jpg",
           "sourceAdData": "shirley_wctcj",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260328-웨딩더하기-청주-서원대-웨딩박람회",
@@ -1502,7 +1322,22 @@
           "heroImageUrl": "https://replyalba.com/banner/SBO2O1773018195.jpg",
           "sourceAdData": "wplus_csm",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "chungcheong-20260328-천안-갤러리아-대형-웨딩박람회",
+          "region": "chungcheong",
+          "title": "천안 갤러리아 대형 웨딩박람회",
+          "dateRangeText": "2026.03.28(토) - 2026.03.29(일)",
+          "startDate": "2026-03-28",
+          "endDate": "2026-03-29",
+          "venueText": "충남 천안시 서북구 공원로 227 갤러리아백화점 센터시티점 7F 특별전시장",
+          "detailUrl": "https://replyalba.com/intros/wedcrowd_ca/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSuUvxj",
+          "heroImageUrl": "https://replyalba.com/banner/5BG0T1714107892.jpg",
+          "sourceAdData": "wedcrowd_ca",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "chungcheong-20260328-청주-osco-패밀리-웨딩박람회",
@@ -1517,14 +1352,29 @@
           "heroImageUrl": "https://replyalba.com/banner/FJKCQ1762151417.jpg",
           "sourceAdData": "familytour_cj",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "chungcheong-20260411-청주-오스코-초대형-웨딩박람회",
+          "region": "chungcheong",
+          "title": "청주 오스코 초대형 웨딩박람회",
+          "dateRangeText": "2026.04.11(토) - 2026.04.12(일)",
+          "startDate": "2026-04-11",
+          "endDate": "2026-04-12",
+          "venueText": "충북 청주시 흥덕구 오송읍 만수리 275-5 청주오스코 특별전시장",
+          "detailUrl": "https://replyalba.com/intros/wedcrowd_cjosco/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSwbJvy",
+          "heroImageUrl": "https://replyalba.com/banner/5K2C41754025930.jpg",
+          "sourceAdData": "wedcrowd_cjosco",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         }
       ]
     },
     {
       "key": "jeolla",
       "name": "전라권",
-      "heroImageUrl": "https://replyalba.com/banner/Y57QY1689660584.jpg",
+      "heroImageUrl": "https://replyalba.com/banner/02HA61763023197.jpg",
       "events": [
         {
           "id": "jeolla-20260301-청담스토리-웨딩초대전",
@@ -1539,7 +1389,7 @@
           "heroImageUrl": "https://replyalba.com/banner/02HA61763023197.jpg",
           "sourceAdData": "cdstory26",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "jeolla-20260314-광주웨딩페어",
@@ -1554,7 +1404,7 @@
           "heroImageUrl": "https://replyalba.com/banner/Y57QY1689660584.jpg",
           "sourceAdData": "best_gwangju",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "jeolla-20260321-광주-컨벤션-웨딩박람회",
@@ -1569,7 +1419,7 @@
           "heroImageUrl": "https://replyalba.com/banner/B2M0T1773029829.jpg",
           "sourceAdData": "gjwshow",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         }
       ]
     },
@@ -1591,7 +1441,7 @@
           "heroImageUrl": "https://replyalba.com/banner/BJX6Q1768541491.jpg",
           "sourceAdData": "revew_gn",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gangwon-20260314-강릉-세인트존스-레브혼수가전박람회",
@@ -1606,7 +1456,7 @@
           "heroImageUrl": "https://replyalba.com/banner/T6ZUA1771554561.jpg",
           "sourceAdData": "revew_gnhs",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gangwon-20260314-속초-그랜드-웨딩페어",
@@ -1621,52 +1471,7 @@
           "heroImageUrl": "https://replyalba.com/banner/76GVO1766387776.jpg",
           "sourceAdData": "wnco_sc",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gangwon-20260314-웨딩더하기-원주-lg베스트샵-웨딩박람회",
-          "region": "gangwon",
-          "title": "웨딩더하기 원주 LG베스트샵 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "강원도 원주시 봉화로 1 6층 LG전자베스트샵 AK플라자원주점",
-          "detailUrl": "https://replyalba.com/intros/wplus_wj/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSuwWKV",
-          "heroImageUrl": "https://replyalba.com/banner/04C5C1772685100.jpg",
-          "sourceAdData": "wplus_wj",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gangwon-20260314-춘천-더테라리움-위드유-웨딩박람회",
-          "region": "gangwon",
-          "title": "춘천 더테라리움 위드유 웨딩박람회",
-          "dateRangeText": "2026.03.14(토) - 2026.03.15(일)",
-          "startDate": "2026-03-14",
-          "endDate": "2026-03-15",
-          "venueText": "강원도 춘천시 지석로 80 9층 춘천 더테라리움",
-          "detailUrl": "https://replyalba.com/intros/withu_cc/",
-          "cpaUrl": "https://replyalba.com/pt/WNEJJAMlRP",
-          "heroImageUrl": "https://replyalba.com/banner/T2G721769498166.jpg",
-          "sourceAdData": "withu_cc",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
-        },
-        {
-          "id": "gangwon-20260321-원주-삼성스토어-위드유-웨딩박람회",
-          "region": "gangwon",
-          "title": "원주 삼성스토어 위드유 웨딩박람회",
-          "dateRangeText": "2026.03.21(토) - 2026.03.22(일)",
-          "startDate": "2026-03-21",
-          "endDate": "2026-03-22",
-          "venueText": "강원도 원주시 북원로 2384 삼성스토어 단계",
-          "detailUrl": "https://replyalba.com/intros/withu_wjss/",
-          "cpaUrl": "https://replyalba.com/pt/NVTwSw8I3z",
-          "heroImageUrl": "https://replyalba.com/banner/GAVH01727834302.jpg",
-          "sourceAdData": "withu_wjss",
-          "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gangwon-20260321-ak플라자-원주-그랜드-웨딩페어",
@@ -1681,7 +1486,22 @@
           "heroImageUrl": "https://replyalba.com/banner/H3QSZ1761291712.jpg",
           "sourceAdData": "wnco_wj",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "gangwon-20260321-원주-삼성스토어-위드유-웨딩박람회",
+          "region": "gangwon",
+          "title": "원주 삼성스토어 위드유 웨딩박람회",
+          "dateRangeText": "2026.03.21(토) - 2026.03.22(일)",
+          "startDate": "2026-03-21",
+          "endDate": "2026-03-22",
+          "venueText": "강원도 원주시 북원로 2384 삼성스토어 단계",
+          "detailUrl": "https://replyalba.com/intros/withu_wjss/",
+          "cpaUrl": "https://replyalba.com/pt/NVTwSw8I3z",
+          "heroImageUrl": "https://replyalba.com/banner/GAVH01727834302.jpg",
+          "sourceAdData": "withu_wjss",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gangwon-20260328-강릉-위드유-웨딩박람회",
@@ -1696,7 +1516,7 @@
           "heroImageUrl": "https://replyalba.com/banner/PSDKB1741745544.jpg",
           "sourceAdData": "withu_gr",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gangwon-20260328-춘천퇴계점-lg베스트샵-위드유-웨딩박람회",
@@ -1711,14 +1531,14 @@
           "heroImageUrl": "https://replyalba.com/banner/9317T1769403309.jpg",
           "sourceAdData": "withu_cclg",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         }
       ]
     },
     {
       "key": "gyeongsang",
       "name": "경상권",
-      "heroImageUrl": "https://replyalba.com/banner/XUPOG1759130600.jpg",
+      "heroImageUrl": "https://replyalba.com/banner/KB8IU1744963740.jpg",
       "events": [
         {
           "id": "gyeongsang-20260301-울산-현대백화점-웨딩박람회",
@@ -1733,7 +1553,7 @@
           "heroImageUrl": "https://replyalba.com/banner/KB8IU1744963740.jpg",
           "sourceAdData": "wwed_us",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeongsang-20260314-대구-연웨딩-엑스코인터불고-웨딩박람회",
@@ -1748,7 +1568,7 @@
           "heroImageUrl": "https://replyalba.com/banner/H96GH1770166416.jpg",
           "sourceAdData": "yeonwed",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeongsang-20260314-울산-반하나-허니문박람회",
@@ -1763,7 +1583,7 @@
           "heroImageUrl": "https://replyalba.com/banner/7ZCOH1749778237.jpg",
           "sourceAdData": "ktour_ulsan",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeongsang-20260314-창원-최대규모-웨딩박람회",
@@ -1778,7 +1598,7 @@
           "heroImageUrl": "https://replyalba.com/banner/ZMP301768888297.jpg",
           "sourceAdData": "cwonfair",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeongsang-20260314-포항-라모르-웨딩박람회",
@@ -1793,7 +1613,7 @@
           "heroImageUrl": "https://replyalba.com/banner/SD7V31769562220.jpg",
           "sourceAdData": "lamour_ph",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeongsang-20260314-포항-투어민-허니문초대전",
@@ -1808,22 +1628,22 @@
           "heroImageUrl": "https://replyalba.com/banner/69OYX1772688355.jpg",
           "sourceAdData": "tourmin_ph",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeongsang-20260321-대구-대결모-대규모-웨딩박람회",
           "region": "gyeongsang",
           "title": "대구 대결모 대규모 웨딩박람회",
-          "dateRangeText": "2026.03.21(토) - 2026.03.22(일)",
+          "dateRangeText": "2026.03.21(토) - 2026.04.12(일)",
           "startDate": "2026-03-21",
-          "endDate": "2026-03-22",
+          "endDate": "2026-04-12",
           "venueText": "대구시 수성구 동대구로 305 대구 그랜드호텔",
           "detailUrl": "https://replyalba.com/intros/daegyulmo/",
           "cpaUrl": "https://replyalba.com/pt/xhfZ6Z0t9n",
           "heroImageUrl": "https://replyalba.com/banner/7T7OL1771826920.jpg",
           "sourceAdData": "daegyulmo",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeongsang-20260321-대구-라모르-웨딩박람회",
@@ -1838,7 +1658,7 @@
           "heroImageUrl": "https://replyalba.com/banner/QQLDH1767058998.jpg",
           "sourceAdData": "lamour",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeongsang-20260321-창원-롯데백화점-웨딩박람회",
@@ -1853,7 +1673,22 @@
           "heroImageUrl": "https://replyalba.com/banner/XUPOG1759130600.jpg",
           "sourceAdData": "w_cwlt",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
+        },
+        {
+          "id": "gyeongsang-20260321-창원-프리마베라-웨딩박람회",
+          "region": "gyeongsang",
+          "title": "창원 프리마베라 웨딩박람회",
+          "dateRangeText": "2026.03.21(토) - 2026.03.29(일)",
+          "startDate": "2026-03-21",
+          "endDate": "2026-03-29",
+          "venueText": "경상남도 창원시 성산구 용지로 112 청담 순수 창원점(중앙동)",
+          "detailUrl": "https://replyalba.com/intros/w_cwpri/",
+          "cpaUrl": "https://replyalba.com/pt/xhfZ6Y2cio",
+          "heroImageUrl": "https://replyalba.com/banner/9O0WW1759131416.jpg",
+          "sourceAdData": "w_cwpri",
+          "badges": [],
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeongsang-20260328-창원-최대규모-대형-웨딩박람회",
@@ -1868,7 +1703,7 @@
           "heroImageUrl": "https://replyalba.com/banner/78VUP1770616109.jpg",
           "sourceAdData": "cwonfair2",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "gyeongsang-20260404-웨딩하람-웨딩박람회",
@@ -1883,14 +1718,14 @@
           "heroImageUrl": "https://replyalba.com/banner/QQ3GU1768204104.jpg",
           "sourceAdData": "wedding_haram2",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         }
       ]
     },
     {
       "key": "jeju",
       "name": "제주",
-      "heroImageUrl": "https://replyalba.com/banner/K0V981758002298.jpg",
+      "heroImageUrl": "https://replyalba.com/banner/OR3UI1770018315.jpg",
       "events": [
         {
           "id": "jeju-20260321-제주-오리엔탈호텔-최대규모-웨딩박람회",
@@ -1905,7 +1740,7 @@
           "heroImageUrl": "https://replyalba.com/banner/OR3UI1770018315.jpg",
           "sourceAdData": "jejuwed2",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "jeju-20260321-제주-제이유-웨딩박람회",
@@ -1920,7 +1755,7 @@
           "heroImageUrl": "https://replyalba.com/banner/O24351773037030.jpg",
           "sourceAdData": "ktop_jeju3",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "jeju-20260321-제주-투어민-허니문박람회",
@@ -1935,7 +1770,7 @@
           "heroImageUrl": "https://replyalba.com/banner/VTL1C1768807756.jpg",
           "sourceAdData": "bhn_tourminjj",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         },
         {
           "id": "jeju-20260328-제주-라마다호텔-초대형-웨딩박람회",
@@ -1950,7 +1785,7 @@
           "heroImageUrl": "https://replyalba.com/banner/K0V981758002298.jpg",
           "sourceAdData": "jejurmd",
           "badges": [],
-          "updatedAt": "2026-03-12T11:18:35.830Z"
+          "updatedAt": "2026-03-14T01:56:02.773646Z"
         }
       ]
     },
