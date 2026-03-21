@@ -8,6 +8,16 @@ function normalize(value: string): string {
   return value.trim().toLowerCase();
 }
 
+function isNotExpired(event: WeddingEvent, now: Date): boolean {
+  if (!isIsoDate(event.endDate)) {
+    return true;
+  }
+
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const eventEnd = new Date(`${event.endDate}T00:00:00`);
+  return eventEnd >= today;
+}
+
 function matchesQuery(event: WeddingEvent, query: string): boolean {
   if (!query) {
     return true;
@@ -63,6 +73,7 @@ export function filterAndSortEvents(
   now: Date = new Date(),
 ): WeddingEvent[] {
   return events
+    .filter((event) => isNotExpired(event, now))
     .filter((event) => matchesQuery(event, filters.query))
     .filter((event) => matchesTimeframe(event, filters, now))
     .filter((event) => (filters.freeInviteOnly ? isFreeInviteEvent(event) : true))
