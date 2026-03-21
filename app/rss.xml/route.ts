@@ -1,4 +1,5 @@
 import { readWeddingData } from "@/lib/data/readWeddingData";
+import { filterAndSortEvents } from "@/lib/filterEvents";
 import { getSiteUrl } from "@/lib/site";
 import type { WeddingEvent } from "@/lib/types";
 
@@ -51,8 +52,15 @@ export async function GET() {
   const siteUrl = siteUrlWithoutTrailingSlash(getSiteUrl());
   const dataset = await readWeddingData();
 
-  const latestEvents = dataset.regions
-    .flatMap((region) => region.events)
+  const latestEvents = filterAndSortEvents(
+    dataset.regions.flatMap((region) => region.events),
+    {
+      query: "",
+      timeframe: "all",
+      freeInviteOnly: false,
+      largeOnly: false,
+    },
+  )
     .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
     .slice(0, RSS_ITEM_LIMIT);
 

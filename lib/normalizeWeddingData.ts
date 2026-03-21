@@ -107,8 +107,6 @@ export function normalizeWeddingData(
   const regions: WeddingRegion[] = (Object.keys(REGION_LABELS) as DataRegionKey[]).map((key) => {
     const previousRegion = previousDataset.regions.find((region) => region.key === key);
     const events = sortEvents(byRegion[key]);
-    const hasEvents = events.length > 0;
-    const mergedEvents = hasEvents ? events : (previousRegion?.events ?? []);
     const heroImageUrl =
       parsedResult.regionHeroImages[key] ??
       previousRegion?.heroImageUrl ??
@@ -118,7 +116,7 @@ export function normalizeWeddingData(
       key,
       name: REGION_LABELS[key],
       heroImageUrl,
-      events: mergedEvents.map((event) => ({
+      events: events.map((event) => ({
         ...event,
         heroImageUrl: event.heroImageUrl || heroImageUrl,
       })),
